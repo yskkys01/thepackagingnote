@@ -47,7 +47,16 @@ h1 { font-size: 84px; line-height: 1.18; font-weight: 700; letter-spacing: -0.02
 .body-text.compact { font-size: 32px; }
 .body-text.compact-small { font-size: 30px; }
 .photo { margin-bottom: 32px; flex-shrink: 0; }
-.photo img { display: block; width: 100%; height: 480px; object-fit: cover; }
+.photo-frame { width: 100%; display: flex; justify-content: center; background: #EEEDE9; }
+.photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.photo-media { display: block; width: 100%; height: 100%; }
+.photo figcaption { margin-top: 10px; font-size: 18px; line-height: 1.35; letter-spacing: .015em; color: var(--muted); }
+.has-photo { padding: 28px 0 24px; }
+.has-photo h1 { font-size: 64px; margin-bottom: 24px; }
+.has-photo .body-text { line-height: 1.45; }
+.has-photo .photo { margin-bottom: 24px; }
+.image-credit { font-size: 18px; line-height: 1.4; }
+.image-credit a { color: inherit; text-decoration: none; }
 .accent { color: var(--accent); }
 </style>
 </head>
@@ -58,9 +67,21 @@ h1 { font-size: 84px; line-height: 1.18; font-weight: 700; letter-spacing: -0.02
     <span>12 / 13</span>
   </div>
 
-  <main class="body">
-    
+  <main class="body has-photo">
+
 <h1>HBM은 3D인데, 전체는 왜 2.5D일까?</h1>
+
+<figure class="photo">
+  <div class="photo-frame" style="height: 280px;">
+
+    <svg class="photo-media" viewBox="0 0 541 374" role="img" aria-label="ZEISS HBM stack virtual cross-section from an X-ray microscopy dataset" preserveAspectRatio="xMidYMid meet">
+      <defs><clipPath id="photo-crop"><rect x="0" y="0" width="541" height="374" /></clipPath></defs>
+      <image clip-path="url(#photo-crop)" href="../../assets/photos/hbm-xrm.jpg" width="1024" height="374" />
+    </svg>
+
+  </div>
+<figcaption>HBM stack · X-ray virtual cross-section (XRM)</figcaption>
+</figure>
 
 <p class="body-text">HBM 내부에서는 여러 DRAM 다이가 수직으로 쌓여 연결됩니다. 이 부분은 3D 적층에 해당합니다.
 
@@ -71,7 +92,8 @@ h1 { font-size: 84px; line-height: 1.18; font-weight: 700; letter-spacing: -0.02
   </main>
 
   <div class="footer">
-    
+<div class="image-credit">Image: ZEISS / 3D InCites · Fig. 3</div>
+
     <div class="source"></div>
   </div>
 </div>

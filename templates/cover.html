@@ -3,10 +3,29 @@
 <h1 class="cover-title">{{ slide.title }}</h1>
 <div class="rule"></div>
 <p class="subtitle">{{ slide.subtitle }}</p>
+{% if slide.image %}
+<figure class="photo">
+  <div class="photo-frame" style="height: {{ slide.image.height|default(480) }}px;">
+{% if slide.image.crop %}
+    <svg class="photo-media" viewBox="{{ slide.image.crop|join(' ') }}" role="img" aria-label="{{ slide.image.alt }}" preserveAspectRatio="xMidYMid meet">
+      <defs><clipPath id="photo-crop"><rect x="{{ slide.image.crop[0] }}" y="{{ slide.image.crop[1] }}" width="{{ slide.image.crop[2] }}" height="{{ slide.image.crop[3] }}" /></clipPath></defs>
+      <image clip-path="url(#photo-crop)" href="{{ assets_uri }}/{{ slide.image.file }}" width="{{ slide.image.original_size[0] }}" height="{{ slide.image.original_size[1] }}" />
+    </svg>
+{% else %}
+    <img src="{{ assets_uri }}/{{ slide.image.file }}" alt="{{ slide.image.alt }}" style="object-fit: {{ slide.image.fit|default('cover') }};{% if slide.image.max_width %} max-width: {{ slide.image.max_width }}px;{% endif %}">
+{% endif %}
+  </div>
+{% if slide.image.caption %}<figcaption>{{ slide.image.caption }}</figcaption>{% endif %}
+</figure>
+{% endif %}
 
 <style>
 .cover-title { font-size: 136px; line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 64px; }
 .rule { width: 120px; height: 6px; background: var(--accent); margin-bottom: 56px; }
 .subtitle { font-size: 44px; line-height: 1.5; color: var(--accent); font-weight: 700; }
+.has-photo .cover-title { font-size: 112px; margin-bottom: 32px; }
+.has-photo .rule { margin-bottom: 28px; }
+.has-photo .subtitle { font-size: 40px; margin-bottom: 40px; }
+.has-photo .photo { margin-bottom: 0; }
 </style>
 {% endblock %}

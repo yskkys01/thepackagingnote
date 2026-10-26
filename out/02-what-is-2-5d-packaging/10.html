@@ -47,7 +47,16 @@ h1 { font-size: 84px; line-height: 1.18; font-weight: 700; letter-spacing: -0.02
 .body-text.compact { font-size: 32px; }
 .body-text.compact-small { font-size: 30px; }
 .photo { margin-bottom: 32px; flex-shrink: 0; }
-.photo img { display: block; width: 100%; height: 480px; object-fit: cover; }
+.photo-frame { width: 100%; display: flex; justify-content: center; background: #EEEDE9; }
+.photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.photo-media { display: block; width: 100%; height: 100%; }
+.photo figcaption { margin-top: 10px; font-size: 18px; line-height: 1.35; letter-spacing: .015em; color: var(--muted); }
+.has-photo { padding: 28px 0 24px; }
+.has-photo h1 { font-size: 64px; margin-bottom: 24px; }
+.has-photo .body-text { line-height: 1.45; }
+.has-photo .photo { margin-bottom: 24px; }
+.image-credit { font-size: 18px; line-height: 1.4; }
+.image-credit a { color: inherit; text-decoration: none; }
 .accent { color: var(--accent); }
 </style>
 </head>
@@ -58,9 +67,21 @@ h1 { font-size: 84px; line-height: 1.18; font-weight: 700; letter-spacing: -0.02
     <span>10 / 13</span>
   </div>
 
-  <main class="body">
-    
+  <main class="body has-photo">
+
 <h1>미세한 접속점을 외부 단자까지 연결한다</h1>
+
+<figure class="photo">
+  <div class="photo-frame" style="height: 220px;">
+
+    <svg class="photo-media" viewBox="515 0 485 426" role="img" aria-label="Philtech tin-silver solder bumps seen by SEM, right-hand SnAg panel" preserveAspectRatio="xMidYMid meet">
+      <defs><clipPath id="photo-crop"><rect x="515" y="0" width="485" height="426" /></clipPath></defs>
+      <image clip-path="url(#photo-crop)" href="../../assets/photos/bump-sem.jpg" width="1000" height="426" />
+    </svg>
+
+  </div>
+<figcaption>SnAg solder bumps · SEM, right-hand panel</figcaption>
+</figure>
 
 <p class="body-text">칩의 접속점은 작고 촘촘하지만, 메인보드에 연결되는 솔더볼은 상대적으로 크고 간격도 넓습니다.
 
@@ -73,7 +94,8 @@ h1 { font-size: 84px; line-height: 1.18; font-weight: 700; letter-spacing: -0.02
   </main>
 
   <div class="footer">
-    <div class="note">주된 역할을 구분한 설명입니다. 인터포저에도 전원·접지 경로가 있으며, 기판도 칩 간 신호를 전달할 수 있습니다.</div>
+<div class="image-credit">Image: Philtech</div>
+<div class="note">주된 역할을 구분한 설명입니다. 인터포저에도 전원·접지 경로가 있으며, 기판도 칩 간 신호를 전달할 수 있습니다.</div>
     <div class="source"></div>
   </div>
 </div>

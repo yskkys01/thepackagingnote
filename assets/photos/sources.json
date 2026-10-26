@@ -1,0 +1,168 @@
+[
+  {
+    "slide": 1,
+    "file": "photos/h100-sxm5.jpg",
+    "image_url": "https://developer-blogs.nvidia.com/wp-content/uploads/2022/03/SXM5-White-4-NEW-FINAL.jpg",
+    "source_url": "https://developer.nvidia.com/blog/nvidia-hopper-architecture-in-depth/",
+    "alt": "NVIDIA H100 SXM5 module with exposed GPU package",
+    "caption": "NVIDIA H100 · SXM5 module",
+    "credit": "Image: NVIDIA",
+    "height": 360,
+    "fit": "contain",
+    "sha256": "5e75ac8e4b02d1c532dd8f6b738858a44d64ed8eefdf9825b13908dde27380fa",
+    "rights_status": "No explicit public-reuse permission verified; draft use only pending rights review",
+    "changes": "Resized for display; no source content edited",
+    "dimensions": [
+      892,
+      415
+    ],
+    "technical_verification": "Original NVIDIA page identifies this as the H100 GPU SXM5 module. Full 892px version advertised in srcset."
+  },
+  {
+    "slide": 5,
+    "file": "photos/tsv-interposer.jpg",
+    "image_url": "https://www.philtech.co.jp/cms/wp-content/uploads/2026/09/05_tsv-interposer-cross-section-sem.jpg",
+    "source_url": "https://www.philtech.co.jp/en/testwafer/assembly-wafer/",
+    "alt": "Philtech silicon interposer cross-sectional SEM showing TSV electrodes",
+    "caption": "Silicon interposer · TSV cross-section SEM",
+    "credit": "Image: Philtech",
+    "height": 280,
+    "fit": "contain",
+    "sha256": "e3d3d200aa5dacc23c3d945e842a80bad9a90d90676e5d0a26790d2b8c56531e",
+    "rights_status": "No explicit public-reuse permission verified; draft use only pending rights review",
+    "changes": "Resized for display; no source content edited",
+    "dimensions": [
+      639,
+      519
+    ],
+    "technical_verification": "Philtech identifies this as its TSV interposer cross-sectional SEM; image shows vertical electrodes, not lateral routing."
+  },
+  {
+    "slide": 8,
+    "file": "photos/tsv-cross-sections.jpg",
+    "image_url": "https://www.thermofisher.com/blog/semiconductors/wp-content/uploads/sites/23/2023/06/advpack4.png",
+    "source_url": "https://www.thermofisher.com/blog/semiconductors/?p=444",
+    "alt": "Thermo Fisher TSV cross-sectional SEM, panel a showing TSV and bonding metrology",
+    "caption": "TSV + bonding structures · SEM, panel (a)",
+    "credit": "Image: Thermo Fisher Scientific · Fig. 4(a)",
+    "height": 280,
+    "fit": "contain",
+    "crop": [
+      0,
+      0,
+      474,
+      352
+    ],
+    "original_size": [
+      853,
+      352
+    ],
+    "sha256": "fcc279125ee605b6a2c75ba15d26caa55774ef606afbbe5f935bb2e7b1a1d5d1",
+    "rights_status": "No explicit public-reuse permission verified; draft use only pending rights review",
+    "changes": "Panel selected using SVG viewport; scale bar retained",
+    "dimensions": [
+      853,
+      352
+    ],
+    "technical_verification": "Source Figure 4 identifies left panel (a) as TSV/bonding metrology; right panel (b) shows defects and is excluded."
+  },
+  {
+    "slide": 9,
+    "file": "photos/pbga-substrate.png",
+    "image_url": "https://cdn.imweb.me/upload/S202605129fc2b87c9458e/33e7f4b296cb9.png",
+    "source_url": "https://koreacircuit-en.imweb.me/pbga",
+    "alt": "Korea Circuit six-layer PBGA substrate construction diagram",
+    "caption": "PBGA · 6-layer substrate construction diagram",
+    "credit": "Image: Korea Circuit",
+    "height": 205,
+    "fit": "contain",
+    "max_width": 339,
+    "sha256": "b6c8b2f6fc249a26cee24e30f77fef4715ce5c2078056658d255563f97fdf3fe",
+    "rights_status": "No explicit public-reuse permission verified; draft use only pending rights review",
+    "changes": "Resized for display; no source content edited",
+    "dimensions": [
+      339,
+      205
+    ],
+    "technical_verification": "Source PBGA page includes this six-layer construction diagram. It is an illustration, not a microscopy cross-section."
+  },
+  {
+    "slide": 10,
+    "file": "photos/bump-sem.jpg",
+    "image_url": "https://www.philtech.co.jp/cms/wp-content/uploads/2026/09/04_current-bump-sem.jpg",
+    "source_url": "https://www.philtech.co.jp/en/testwafer/assembly-wafer/",
+    "alt": "Philtech tin-silver solder bumps seen by SEM, right-hand SnAg panel",
+    "caption": "SnAg solder bumps · SEM, right-hand panel",
+    "credit": "Image: Philtech",
+    "height": 220,
+    "fit": "contain",
+    "crop": [
+      515,
+      0,
+      485,
+      426
+    ],
+    "original_size": [
+      1000,
+      426
+    ],
+    "sha256": "5fd2458315fc5be250cc5786b3746f23c0a4fbae4ea13aa3c908a48734d2f807",
+    "rights_status": "No explicit public-reuse permission verified; draft use only pending rights review",
+    "changes": "Panel selected using SVG viewport; scale bar retained",
+    "dimensions": [
+      1000,
+      426
+    ],
+    "technical_verification": "Philtech identifies left panel as NiAu and right panel as SnAg; only right panel is displayed. This is not identified as a specific C4 implementation."
+  },
+  {
+    "slide": 11,
+    "file": "photos/amd-fiji.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/AMD_Fiji_GPU_package_with_GPU%2C_HBM_memory_and_interposer.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:AMD_Fiji_GPU_package_with_GPU,_HBM_memory_and_interposer.jpg",
+    "alt": "AMD Fiji package with central GPU and four neighboring HBM stacks",
+    "caption": "AMD Fiji · GPU + HBM placement example; not CoWoS-S",
+    "credit": "Photo: C. Spille / PC Games Hardware · CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "license_label": "creativecommons.org/licenses/by-sa/4.0",
+    "height": 280,
+    "fit": "contain",
+    "sha256": "9394dd142e1971b8575d3a967ac69d89a1069e77bd89d9bfa4b81a7d5a0237c1",
+    "rights_status": "CC BY-SA 4.0 verified on Wikimedia Commons file page",
+    "changes": "Displayed at reduced size, without cropping or annotations",
+    "dimensions": [
+      3872,
+      2592
+    ],
+    "technical_verification": "Commons description identifies AMD Fiji GPU with HBM and interposer; used as a placement example, not as evidence of TSMC CoWoS-S."
+  },
+  {
+    "slide": 12,
+    "file": "photos/hbm-xrm.jpg",
+    "image_url": "https://3dincites-imaps.nyc3.digitaloceanspaces.com/wp-content/uploads/20240828111950/HiddenFIguresFig3-1024x374.jpg",
+    "source_url": "https://www.3dincites.com/2020/04/digital-cross-section-technology-for-inspecting-and-meauring-buried-package-interconnects/",
+    "alt": "ZEISS HBM stack virtual cross-section from an X-ray microscopy dataset",
+    "caption": "HBM stack · X-ray virtual cross-section (XRM)",
+    "credit": "Image: ZEISS / 3D InCites · Fig. 3",
+    "height": 280,
+    "fit": "contain",
+    "crop": [
+      0,
+      0,
+      541,
+      374
+    ],
+    "original_size": [
+      1024,
+      374
+    ],
+    "sha256": "46756bb52a1d6983261c1d137493a5f03929962121fa63a13990f2b0336b6e9e",
+    "rights_status": "No explicit public-reuse permission verified; draft use only pending rights review",
+    "changes": "Panel selected using SVG viewport; scale bar retained",
+    "dimensions": [
+      1024,
+      374
+    ],
+    "technical_verification": "Source Figure 3 identifies a digital HBM cross-section extracted from Versa XRM 3D data. This is X-ray microscopy, not SEM."
+  }
+]

@@ -47,7 +47,16 @@ h1 { font-size: 84px; line-height: 1.18; font-weight: 700; letter-spacing: -0.02
 .body-text.compact { font-size: 32px; }
 .body-text.compact-small { font-size: 30px; }
 .photo { margin-bottom: 32px; flex-shrink: 0; }
-.photo img { display: block; width: 100%; height: 480px; object-fit: cover; }
+.photo-frame { width: 100%; display: flex; justify-content: center; background: #EEEDE9; }
+.photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.photo-media { display: block; width: 100%; height: 100%; }
+.photo figcaption { margin-top: 10px; font-size: 18px; line-height: 1.35; letter-spacing: .015em; color: var(--muted); }
+.has-photo { padding: 28px 0 24px; }
+.has-photo h1 { font-size: 64px; margin-bottom: 24px; }
+.has-photo .body-text { line-height: 1.45; }
+.has-photo .photo { margin-bottom: 24px; }
+.image-credit { font-size: 18px; line-height: 1.4; }
+.image-credit a { color: inherit; text-decoration: none; }
 .accent { color: var(--accent); }
 </style>
 </head>
@@ -58,9 +67,18 @@ h1 { font-size: 84px; line-height: 1.18; font-weight: 700; letter-spacing: -0.02
     <span>5 / 13</span>
   </div>
 
-  <main class="body">
-    
+  <main class="body has-photo">
+
 <h1>칩 사이에 미세한 배선을 형성한다</h1>
+
+<figure class="photo">
+  <div class="photo-frame" style="height: 280px;">
+
+    <img src="../../assets/photos/tsv-interposer.jpg" alt="Philtech silicon interposer cross-sectional SEM showing TSV electrodes" style="object-fit: contain;">
+
+  </div>
+<figcaption>Silicon interposer · TSV cross-section SEM</figcaption>
+</figure>
 
 <p class="body-text">인터포저는 칩과 패키지 기판 사이에 들어가는 연결 구조입니다.
 
@@ -71,7 +89,8 @@ GPU와 HBM처럼 많은 신호를 동시에 주고받는 칩들을 연결할 때
   </main>
 
   <div class="footer">
-    
+<div class="image-credit">Image: Philtech</div>
+
     <div class="source"></div>
   </div>
 </div>

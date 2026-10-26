@@ -2,7 +2,19 @@
 {% block content %}
 <h1>{{ slide.title }}</h1>
 {% if slide.image %}
-<figure class="photo"><img src="{{ assets_uri }}/{{ slide.image.file }}" alt="{{ slide.image.alt }}"></figure>
+<figure class="photo">
+  <div class="photo-frame" style="height: {{ slide.image.height|default(480) }}px;">
+{% if slide.image.crop %}
+    <svg class="photo-media" viewBox="{{ slide.image.crop|join(' ') }}" role="img" aria-label="{{ slide.image.alt }}" preserveAspectRatio="xMidYMid meet">
+      <defs><clipPath id="photo-crop"><rect x="{{ slide.image.crop[0] }}" y="{{ slide.image.crop[1] }}" width="{{ slide.image.crop[2] }}" height="{{ slide.image.crop[3] }}" /></clipPath></defs>
+      <image clip-path="url(#photo-crop)" href="{{ assets_uri }}/{{ slide.image.file }}" width="{{ slide.image.original_size[0] }}" height="{{ slide.image.original_size[1] }}" />
+    </svg>
+{% else %}
+    <img src="{{ assets_uri }}/{{ slide.image.file }}" alt="{{ slide.image.alt }}" style="object-fit: {{ slide.image.fit|default('cover') }};{% if slide.image.max_width %} max-width: {{ slide.image.max_width }}px;{% endif %}">
+{% endif %}
+  </div>
+{% if slide.image.caption %}<figcaption>{{ slide.image.caption }}</figcaption>{% endif %}
+</figure>
 {% endif %}
 <p class="body-text">{{ slide.body }}</p>
 {% endblock %}

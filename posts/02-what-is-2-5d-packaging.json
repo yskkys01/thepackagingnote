@@ -15,6 +15,14 @@
     {
       "layout": "cover",
       "index": 1,
+      "image": {
+        "file": "photos/h100-sxm5.jpg",
+        "alt": "NVIDIA H100 SXM5 module with exposed GPU package",
+        "caption": "NVIDIA H100 · SXM5 module",
+        "credit": "Image: NVIDIA",
+        "height": 360,
+        "fit": "contain"
+      },
       "title": "2.5D 패키징",
       "subtitle": "왜 2.5D라고 부를까? 인터포저와 패키지 기판의 역할",
       "source": ""
@@ -51,6 +59,14 @@
     {
       "layout": "text",
       "index": 5,
+      "image": {
+        "file": "photos/tsv-interposer.jpg",
+        "alt": "Philtech silicon interposer cross-sectional SEM showing TSV electrodes",
+        "caption": "Silicon interposer · TSV cross-section SEM",
+        "credit": "Image: Philtech",
+        "height": 280,
+        "fit": "contain"
+      },
       "title": "칩 사이에 미세한 배선을 형성한다",
       "body": "인터포저는 칩과 패키지 기판 사이에 들어가는 연결 구조입니다.\n\n실리콘 인터포저에는 반도체 공정을 이용해 미세한 금속 배선을 만들 수 있습니다. 이 배선을 통해 칩의 접속점을 다른 칩이나 아래쪽 기판으로 연결합니다.\n\nGPU와 HBM처럼 많은 신호를 동시에 주고받는 칩들을 연결할 때 사용됩니다.",
       "source": ""
@@ -74,6 +90,24 @@
     {
       "layout": "text",
       "index": 8,
+      "image": {
+        "file": "photos/tsv-cross-sections.jpg",
+        "alt": "Thermo Fisher TSV cross-sectional SEM, panel a showing TSV and bonding metrology",
+        "caption": "TSV + bonding structures · SEM, panel (a)",
+        "credit": "Image: Thermo Fisher Scientific · Fig. 4(a)",
+        "height": 280,
+        "fit": "contain",
+        "crop": [
+          0,
+          0,
+          474,
+          352
+        ],
+        "original_size": [
+          853,
+          352
+        ]
+      },
       "title": "TSV를 통해 아래쪽 기판과 연결한다",
       "body": "인터포저의 금속 배선은 칩 사이의 신호를 전달합니다.\n\n이 가운데 패키지 기판으로 이어져야 하는 신호와 전원·접지 경로는 실리콘을 관통하는 TSV를 통해 아래쪽으로 연결됩니다.\n\nTSV는 Through-Silicon Via의 약자로, 실리콘 내부를 관통하는 전기적 연결 통로를 뜻합니다.",
       "note": "모든 2.5D 패키징에 실리콘 인터포저와 TSV가 사용되는 것은 아닙니다.",
@@ -82,6 +116,15 @@
     {
       "layout": "text",
       "index": 9,
+      "image": {
+        "file": "photos/pbga-substrate.png",
+        "alt": "Korea Circuit six-layer PBGA substrate construction diagram",
+        "caption": "PBGA · 6-layer substrate construction diagram",
+        "credit": "Image: Korea Circuit",
+        "height": 205,
+        "fit": "contain",
+        "max_width": 339
+      },
       "title": "전원과 신호를 연결하고 구조를 지지한다",
       "body": "패키지 기판은 여러 층의 금속 배선과 층간 연결 통로로 구성됩니다.\n\n내부 배선은 칩에 전원과 접지 경로를 제공하고, 패키지와 메인보드 사이의 신호를 전달합니다.\n\n기판은 칩과 인터포저를 지지하는 역할도 합니다. 조립 과정과 사용 중 발생하는 변형을 고려해 재료와 두께, 층 구성을 설계합니다.",
       "source": ""
@@ -89,6 +132,24 @@
     {
       "layout": "text",
       "index": 10,
+      "image": {
+        "file": "photos/bump-sem.jpg",
+        "alt": "Philtech tin-silver solder bumps seen by SEM, right-hand SnAg panel",
+        "caption": "SnAg solder bumps · SEM, right-hand panel",
+        "credit": "Image: Philtech",
+        "height": 220,
+        "fit": "contain",
+        "crop": [
+          515,
+          0,
+          485,
+          426
+        ],
+        "original_size": [
+          1000,
+          426
+        ]
+      },
       "title": "미세한 접속점을 외부 단자까지 연결한다",
       "body": "칩의 접속점은 작고 촘촘하지만, 메인보드에 연결되는 솔더볼은 상대적으로 크고 간격도 넓습니다.\n\n인터포저와 패키지 기판은 이 간격 차이를 단계적으로 연결합니다.\n\n인터포저: 칩 가까이에서 미세한 칩 간 배선을 구현하고, 접속점을 아래쪽 연결부로 이어 줍니다.\n\n패키지 기판: 배선을 외부 단자 간격에 맞게 펼치고, 패키지를 메인보드와 연결합니다.",
       "note": "주된 역할을 구분한 설명입니다. 인터포저에도 전원·접지 경로가 있으며, 기판도 칩 간 신호를 전달할 수 있습니다.",
@@ -97,6 +158,16 @@
     {
       "layout": "text",
       "index": 11,
+      "image": {
+        "file": "photos/amd-fiji.jpg",
+        "alt": "AMD Fiji package with central GPU and four neighboring HBM stacks",
+        "caption": "AMD Fiji · GPU + HBM placement example; not CoWoS-S",
+        "credit": "Photo: C. Spille / PC Games Hardware · CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "license_label": "creativecommons.org/licenses/by-sa/4.0",
+        "height": 280,
+        "fit": "contain"
+      },
       "title": "GPU 옆에 HBM을 배치하는 구조",
       "body": "GPU는 병렬 연산을 수행하고, HBM은 연산에 필요한 데이터를 저장하고 공급합니다.\n\n두 부품을 인터포저 위에 가까이 배치하면 많은 신호선을 짧은 거리로 연결할 수 있습니다. 이를 통해 높은 메모리 대역폭을 확보합니다.\n\n실리콘 인터포저를 사용하는 TSMC의 CoWoS-S가 대표적인 사례입니다.",
       "note": "CoWoS에는 여러 구조가 있으며, 여기서는 CoWoS-S를 설명합니다.",
@@ -105,6 +176,24 @@
     {
       "layout": "text",
       "index": 12,
+      "image": {
+        "file": "photos/hbm-xrm.jpg",
+        "alt": "ZEISS HBM stack virtual cross-section from an X-ray microscopy dataset",
+        "caption": "HBM stack · X-ray virtual cross-section (XRM)",
+        "credit": "Image: ZEISS / 3D InCites · Fig. 3",
+        "height": 280,
+        "fit": "contain",
+        "crop": [
+          0,
+          0,
+          541,
+          374
+        ],
+        "original_size": [
+          1024,
+          374
+        ]
+      },
       "title": "HBM은 3D인데, 전체는 왜 2.5D일까?",
       "body": "HBM 내부에서는 여러 DRAM 다이가 수직으로 쌓여 연결됩니다. 이 부분은 3D 적층에 해당합니다.\n\n반면 GPU와 HBM은 인터포저 위에 나란히 배치됩니다. 이들 사이의 연결은 2.5D 구조입니다.\n\n따라서 하나의 패키지 안에 3D로 적층된 메모리와 2.5D 칩 간 연결이 함께 사용될 수 있습니다.",
       "source": ""

@@ -47,7 +47,16 @@ h1 { font-size: 84px; line-height: 1.18; font-weight: 700; letter-spacing: -0.02
 .body-text.compact { font-size: 32px; }
 .body-text.compact-small { font-size: 30px; }
 .photo { margin-bottom: 32px; flex-shrink: 0; }
-.photo img { display: block; width: 100%; height: 480px; object-fit: cover; }
+.photo-frame { width: 100%; display: flex; justify-content: center; background: #EEEDE9; }
+.photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.photo-media { display: block; width: 100%; height: 100%; }
+.photo figcaption { margin-top: 10px; font-size: 18px; line-height: 1.35; letter-spacing: .015em; color: var(--muted); }
+.has-photo { padding: 28px 0 24px; }
+.has-photo h1 { font-size: 64px; margin-bottom: 24px; }
+.has-photo .body-text { line-height: 1.45; }
+.has-photo .photo { margin-bottom: 24px; }
+.image-credit { font-size: 18px; line-height: 1.4; }
+.image-credit a { color: inherit; text-decoration: none; }
 .accent { color: var(--accent); }
 </style>
 </head>
@@ -59,7 +68,7 @@ h1 { font-size: 84px; line-height: 1.18; font-weight: 700; letter-spacing: -0.02
   </div>
 
   <main class="body">
-    
+
 
 <h1>칩의 배치와 연결 방식에 따른 구분</h1>
 
@@ -93,7 +102,8 @@ h1 { font-size: 84px; line-height: 1.18; font-weight: 700; letter-spacing: -0.02
   </main>
 
   <div class="footer">
-    <div class="note">2.5D라는 이름은 구조적 특징을 나타냅니다. 인터포저가 한 층 추가돼서 ‘0.5차원’이 더해진다는 뜻은 아닙니다.</div>
+
+<div class="note">2.5D라는 이름은 구조적 특징을 나타냅니다. 인터포저가 한 층 추가돼서 ‘0.5차원’이 더해진다는 뜻은 아닙니다.</div>
     <div class="source"></div>
   </div>
 </div>
