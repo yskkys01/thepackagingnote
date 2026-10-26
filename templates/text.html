@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ slide.title }}</h1>
+{% if slide.image %}
+<figure class="photo"><img src="{{ assets_uri }}/{{ slide.image.file }}" alt="{{ slide.image.alt }}"></figure>
+{% endif %}
+<p class="body-text">{{ slide.body }}</p>
+{% endblock %}

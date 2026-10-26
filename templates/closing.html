@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ slide.title }}</h1>
+<p class="body-text">{{ slide.body }}</p>
+{% if slide.cta %}<div class="cta">{{ slide.cta }}</div>{% endif %}
+
+<style>
+.cta {
+  align-self: flex-start;
+  margin-top: 64px;
+  padding: 28px 48px;
+  border: 2.5px solid var(--accent);
+  color: var(--accent);
+  font-size: 34px; font-weight: 700;
+}
+</style>
+{% endblock %}

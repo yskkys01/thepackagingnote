@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+{% set cols = slide.rows[0].keys() | reject('equalto', 'item') | list %}
+<h1>{{ slide.title }}</h1>
+
+<div class="table" style="grid-template-columns: 240px repeat({{ cols|length }}, 1fr);">
+  <div class="cell head"></div>
+  {% for c in cols %}<div class="cell head">{{ c }}</div>{% endfor %}
+
+  {% for row in slide.rows %}
+    <div class="cell item">{{ row.item }}</div>
+    {% for c in cols %}<div class="cell">{{ row[c] }}</div>{% endfor %}
+  {% endfor %}
+</div>
+
+<style>
+.table { display: grid; border-top: 2px solid var(--ink); }
+.cell {
+  padding: 36px 20px;
+  font-size: 32px; line-height: 1.5;
+  border-bottom: 1.5px solid var(--muted);
+}
+.cell.head { font-weight: 700; color: var(--accent); font-size: 36px; }
+.cell.item { font-weight: 700; }
+</style>
+{% endblock %}

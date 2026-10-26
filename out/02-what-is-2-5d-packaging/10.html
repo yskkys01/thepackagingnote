@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<style>
+@font-face { font-family: "Pretendard"; src: url("../../fonts/Pretendard-Regular.otf") format("opentype"); font-weight: 400; }
+@font-face { font-family: "Pretendard"; src: url("../../fonts/Pretendard-Bold.otf") format("opentype"); font-weight: 700; }
+
+:root {
+  --bg: #F7F6F3;
+  --ink: #1A1A1A;
+  --accent: #2F5D8C;
+  --muted: #8A8A8A;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1080px; height: 1350px; overflow: hidden; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Pretendard", "Pretendard", "Inter", "Noto Sans KR", sans-serif;
+  word-break: keep-all;
+  -webkit-font-smoothing: antialiased;
+}
+.slide {
+  position: relative;
+  width: 1080px; height: 1350px;
+  padding: 96px 96px 88px;
+  display: flex; flex-direction: column;
+}
+.header {
+  display: flex; justify-content: space-between; align-items: baseline;
+  font-size: 24px; letter-spacing: .08em; color: var(--muted);
+  padding-bottom: 24px; border-bottom: 1.5px solid var(--ink);
+}
+.header .series { color: var(--ink); font-weight: 700; }
+.body { min-height: 0; flex: 1; display: flex; flex-direction: column; justify-content: center; }
+.footer {
+  min-height: 72px;
+  display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end; flex-shrink: 0;
+  padding-top: 24px; border-top: 1px solid var(--muted);
+  font-size: 20px; line-height: 1.5; color: var(--muted);
+}
+.footer .source { max-width: 900px; }
+
+h1 { font-size: 84px; line-height: 1.18; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 44px; }
+.body-text { font-size: 34px; line-height: 1.65; white-space: pre-line; }
+.body-text.compact { font-size: 32px; }
+.body-text.compact-small { font-size: 30px; }
+.photo { margin-bottom: 32px; flex-shrink: 0; }
+.photo img { display: block; width: 100%; height: 480px; object-fit: cover; }
+.accent { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <span class="series">PACKAGING NOTE 02</span>
+    <span>10 / 13</span>
+  </div>
+
+  <main class="body">
+    
+<h1>미세한 접속점을 외부 단자까지 연결한다</h1>
+
+<p class="body-text">칩의 접속점은 작고 촘촘하지만, 메인보드에 연결되는 솔더볼은 상대적으로 크고 간격도 넓습니다.
+
+인터포저와 패키지 기판은 이 간격 차이를 단계적으로 연결합니다.
+
+인터포저: 칩 가까이에서 미세한 칩 간 배선을 구현하고, 접속점을 아래쪽 연결부로 이어 줍니다.
+
+패키지 기판: 배선을 외부 단자 간격에 맞게 펼치고, 패키지를 메인보드와 연결합니다.</p>
+
+  </main>
+
+  <div class="footer">
+    <div class="note">주된 역할을 구분한 설명입니다. 인터포저에도 전원·접지 경로가 있으며, 기판도 칩 간 신호를 전달할 수 있습니다.</div>
+    <div class="source"></div>
+  </div>
+</div>
+</body>
+</html>

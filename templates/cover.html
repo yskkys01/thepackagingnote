@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="cover-title">{{ slide.title }}</h1>
+<div class="rule"></div>
+<p class="subtitle">{{ slide.subtitle }}</p>
+
+<style>
+.cover-title { font-size: 136px; line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 64px; }
+.rule { width: 120px; height: 6px; background: var(--accent); margin-bottom: 56px; }
+.subtitle { font-size: 44px; line-height: 1.5; color: var(--accent); font-weight: 700; }
+</style>
+{% endblock %}

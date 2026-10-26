@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ slide.title }}</h1>
+<div class="diagram">{{ svg|safe }}</div>
+<p class="caption">{{ slide.body }}</p>
+
+<style>
+.diagram { width: 100%; margin: 8px 0 48px; }
+.diagram svg { width: 100%; height: auto; display: block; }
+.caption { font-size: 32px; line-height: 1.65; white-space: pre-line; color: var(--ink); }
+</style>
+{% endblock %}
