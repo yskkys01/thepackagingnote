@@ -58,9 +58,47 @@ h1 { font-size: 84px; line-height: 1.18; font-weight: 700; letter-spacing: -0.02
 .image-credit { font-size: 18px; line-height: 1.4; }
 .image-credit a { color: inherit; text-decoration: none; }
 .accent { color: var(--accent); }
+.layout-text .photo-frame { height: 380px !important; }
+.slide-10 .photo-frame { height: 300px !important; }
+.slide-9 .photo-frame { height: 260px !important; }
+/* Editorial system: fixed opening baseline, quiet furniture, photographic plates. */
+.slide { padding: 64px 80px 56px; }
+.header { font-size: 18px; letter-spacing: .16em; padding-bottom: 20px; border-bottom: 1px solid #C9C8C3; }
+.header .series::before { content: ""; display: inline-block; width: 10px; height: 10px; margin-right: 14px; background: var(--accent); }
+.body { justify-content: flex-start; padding: 76px 0 40px; }
+h1 { font-size: 78px; letter-spacing: -.045em; line-height: 1.16; margin-bottom: 56px; max-width: 880px; }
+.body-text { line-height: 1.65; }
+.footer { min-height: 62px; font-size: 17px; line-height: 1.45; border-color: #D6D4CE; padding-top: 18px; }
+.image-credit { font-size: 16px; }
+.has-photo { padding-top: 44px; padding-bottom: 30px; }
+.has-photo h1 { font-size: 64px; margin-bottom: 30px; }
+.has-photo .body-text { line-height: 1.45; }
+.photo { display: grid; grid-template-columns: 60% 1fr; align-items: center; gap: 32px; }
+.photo-frame { background: transparent; }
+.photo figcaption { margin: 0; padding: 20px 0 20px 22px; border-left: 2px solid var(--accent); color: var(--accent); font-size: 20px; line-height: 1.5; max-width: 260px; }
+.layout-cover { background: #162C40; color: #F7F6F3; }
+.layout-cover .header, .layout-cover .footer { border-color: #526372; color: #ADB9C3; }
+.layout-cover .header .series { color: #F7F6F3; }
+.layout-cover .header .series::before { background: #91B6DA; }
+.layout-cover .body { padding-top: 90px; }
+.layout-cover .has-photo .cover-title { font-size: 132px; margin-bottom: 30px; max-width: 850px; }
+.layout-cover .rule { background: #91B6DA; }
+.layout-cover .has-photo .subtitle { color: #B7D1EA; font-size: 38px; line-height: 1.4; max-width: 780px; margin-bottom: 56px; }
+.layout-cover .photo { display: block; }
+.layout-cover .photo-frame { background: white; padding: 20px; height: 400px !important; }
+.layout-cover .photo figcaption { border: 0; padding: 14px 0 0; max-width: none; color: #ADB9C3; font-size: 18px; }
+.layout-closing .body { justify-content: center; }
+.layout-closing h1 { color: var(--accent); }
+.layout-closing .cta { background: var(--accent); color: #fff; border: 0; padding: 26px 34px; font-size: 30px; }
+.layout-diagram .body { padding-top: 40px; }
+.layout-diagram h1 { font-size: 70px; margin-bottom: 12px; }
+.layout-diagram .diagram { margin-bottom: 24px; }
+.layout-comparison .cell { padding: 30px 20px; }
+.layout-comparison .cell.head { background: var(--accent); color: white; border: 0; }
+.layout-comparison .cell.item { color: var(--accent); }
 </style>
 </head>
-<body>
+<body class="layout-closing slide-13">
 <div class="slide">
   <div class="header">
     <span class="series">PACKAGING NOTE 02</span>
