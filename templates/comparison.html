@@ -1,5 +1,44 @@
 {% extends "base.html" %}
+{% macro words(x,y,w,h,value,kind='copy') -%}
+<foreignObject x="{{ x }}" y="{{ y }}" width="{{ w }}" height="{{ 255 if kind == 'title' else (135 if kind == 'number' else h) }}"><div xmlns="http://www.w3.org/1999/xhtml" class="art-{{ kind }}">{{ value }}</div></foreignObject>
+{%- endmacro %}
+{% macro chip(x,y,w,h,label,fill='#2F5D8C') -%}
+<g transform="translate({{ x }} {{ y }})" class="chip-shape">
+<rect x="-12" y="-12" width="{{ w+24 }}" height="{{ h+24 }}" rx="6" fill="#718698"/>
+<rect width="{{ w }}" height="{{ h }}" rx="3" fill="{{ fill }}" stroke="#AAC5DA" stroke-width="2"/>
+{% for k in range(1,7) %}<path d="M{{ w*k/7 }} -20 v8 M{{ w*k/7 }} {{ h+12 }} v8" stroke="#C7B584" stroke-width="6"/>{% endfor %}
+<text x="{{ w/2 }}" y="{{ h/2 }}" dy=".35em" text-anchor="middle" fill="#F7F6F3" font-family="Pretendard" font-size="{{ [w/4,40]|min }}" font-weight="700">{{ label }}</text>
+</g>
+{%- endmacro %}
 {% block content %}
+{% if slide.visual %}
+{% set v = slide.visual %}
+<svg class="story-canvas" viewBox="0 0 920 1040" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="{{ v.title }}">
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10" fill="#91B6DA"/></marker>
+<pattern id="dot-grid" width="28" height="28" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#91B6DA" opacity=".2"/></pattern>
+</defs>
+{{ words(0,40,900,220,v.title,'title') }}
+{% for row in slide.rows %}
+{% set x = loop.index0*310 %}
+<g transform="translate({{x}} 310)">
+{% if loop.index == 3 %}
+<path d="M30 330 H275" stroke="#718698" stroke-width="30"/>
+{{ chip(105,200,95,90,'A') }}{{ chip(105,55,95,90,'B','#6E879B') }}
+<path d="M152 150 V185 M152 303 V317" stroke="#C7A95F" stroke-width="5"/>
+{% else %}
+{{ chip(28,175,95,90,'A') }}{{ chip(173,175,95,90,'B','#6E879B') }}
+<rect x="10" y="320" width="280" height="30" fill="#718698"/>
+{% if loop.index == 2 %}
+<rect x="15" y="280" width="270" height="24" fill="#91B6DA"/>
+{% for k in range(4) %}<path d="M80 {{283+k*5}} H220" stroke="#2F5D8C" stroke-width="2"/>{% endfor %}
+{% else %}<path d="M80 278 V335 H220 V278" stroke="#C7A95F" stroke-width="6" fill="none"/>{% endif %}
+{% endif %}
+</g>
+{{ words(x,710,290,110,row.item,'number') }}
+{{ words(x,840,285,160,v.points[loop.index0],'copy') }}
+{% endfor %}
+</svg>{% else %}
 {% set cols = slide.rows[0].keys() | reject('equalto', 'item') | list %}
 <h1>{{ slide.title }}</h1>
 
@@ -23,4 +62,4 @@
 .cell.head { font-weight: 700; color: var(--accent); font-size: 36px; }
 .cell.item { font-weight: 700; }
 </style>
-{% endblock %}
+{% endif %}{% endblock %}

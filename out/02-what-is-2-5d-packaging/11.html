@@ -123,9 +123,46 @@ h1 { font-size: 78px; letter-spacing: -.045em; line-height: 1.16; margin-bottom:
   mask-image: linear-gradient(to top, #000 0 12%, transparent 12%), linear-gradient(to right, transparent, #000 4% 96%, transparent);
 }
 .layout-cover .photo figcaption { position: absolute; top: 540px; left: 80px; padding: 0; }
+/* Diagram-led story system; the approved cover is unchanged. */
+.visual-slide { background: #F7F6F3; color: #1A1A1A; }
+.visual-slide .body { display: block; position: relative; padding: 0; min-height: 0; }
+.visual-slide .header { position: relative; z-index: 5; }
+.visual-slide .footer { position: relative; z-index: 5; min-height: 50px; padding-top: 12px; font-size: 16px; }
+.visual-slide .footer .source:empty { display: none; }
+.visual-slide .story-canvas { display: block; width: 920px; height: 1040px; overflow: visible; }
+.visual-slide.tone-dark { color: #F7F6F3; background: #162C40; }
+.visual-slide.tone-dark .header, .visual-slide.tone-dark .footer { border-color: #526372; color: #ADB9C3; }
+.visual-slide.tone-dark .header .series { color: #F7F6F3; }
+.visual-slide.tone-dark .header .series::before { background: #91B6DA; }
+.art-title { font-size: 104px; font-weight: 700; line-height: 1.08; letter-spacing: -.05em; white-space: pre-line; }
+.art-copy { font-size: 34px; line-height: 1.48; white-space: pre-line; word-break: keep-all; }
+.art-small { font-size: 28px; line-height: 1.5; white-space: pre-line; }
+.art-label { font-size: 30px; line-height: 1.4; font-weight: 700; white-space: pre-line; }
+.art-statement { font-size: 54px; line-height: 1.24; font-weight: 700; letter-spacing: -.035em; white-space: pre-line; }
+.art-statement-small { font-size: 44px; line-height: 1.35; font-weight: 700; letter-spacing: -.03em; white-space: pre-line; }
+.art-number { font-size: 98px; font-weight: 700; letter-spacing: -.06em; color: #2F5D8C; }
+.art-technical { font-size: 26px; line-height: 1.45; font-weight: 700; letter-spacing: .08em; white-space: pre-line; color: #2F5D8C; }
+.tone-dark .art-technical, .tone-dark .art-small, .tone-dark .art-label { color: #B7D1EA; }
+.art-cta { padding: 17px 22px; border: 1.5px solid #91B6DA; color: #DCE9F4; font-size: 24px; line-height: 1.4; }
+.svg-label { fill: #F7F6F3; font: 700 34px Pretendard; }
+.micro-label { fill: #91B6DA; font: 20px Pretendard; letter-spacing: .04em; }
+.technical-svg { fill: #2F5D8C; font: 700 24px Pretendard; letter-spacing: .08em; }
+.big-type { fill: #2F5D8C; font-family: Pretendard; font-weight: 700; letter-spacing: -.06em; }
+.tone-dark .big-type { fill: #91B6DA; }
+.outline-word { fill: none; stroke: #7399B8; stroke-width: 1; opacity: .28; font-family: Pretendard; font-weight: 700; letter-spacing: -.04em; }
+.route { fill: none; stroke: #91B6DA; stroke-width: 5; }
+.hairline { fill: none; stroke: #7194B0; stroke-width: 2; }
+.structure-title { position: absolute; top: 40px; left: 0; font-size: 104px !important; line-height: 1.08; letter-spacing: -.05em; white-space: pre-line; margin: 0 !important; }
+.structure-art { position: absolute; top: 320px; left: -20px; width: 960px; height: 380px; overflow: hidden; }
+.structure-art svg { display: block; width: 960px; height: auto; transform: translateY(-180px); }
+.structure-roles { position: absolute; top: 760px; left: 0; width: 920px; }
+.structure-roles > div { display: flex; align-items: baseline; gap: 36px; padding: 17px 0; border-top: 1px solid #CBD2D7; }
+.structure-roles strong { width: 270px; font-size: 38px; color: #2F5D8C; }
+.structure-roles span { font-size: 30px; }
+.slide-10.visual-slide .art-title { font-size: 96px; }
 </style>
 </head>
-<body class="layout-text slide-11">
+<body class="layout-text slide-11 visual-slide tone-dark">
 <div class="slide">
   <div class="header">
     <span class="series">PACKAGING NOTE 02</span>
@@ -134,27 +171,62 @@ h1 { font-size: 78px; letter-spacing: -.045em; line-height: 1.16; margin-bottom:
 
   <main class="body has-photo">
 
-<div class="composition">
 
-<figure class="photo">
-  <div class="photo-frame" style="height: 280px;">
 
-    <img src="../../assets/photos/amd-fiji-cutout.png" alt="AMD Fiji package with central GPU and four neighboring HBM stacks" style="object-fit: contain;">
+<svg class="story-canvas" viewBox="0 0 920 1040" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="GPU 바로 옆에,
+HBM">
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10" fill="#91B6DA"/></marker>
+<pattern id="dot-grid" width="28" height="28" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#91B6DA" opacity=".2"/></pattern>
+</defs>
 
-  </div>
-<figcaption>AMD Fiji · GPU + HBM placement example; not CoWoS-S</figcaption>
-</figure>
+<foreignObject x="0" y="35" width="900" height="255"><div xmlns="http://www.w3.org/1999/xhtml" class="art-title">GPU 바로 옆에,
+HBM</div></foreignObject>
+<rect x="-20" y="340" width="960" height="440" rx="12" fill="#1F3C52" stroke="#6689A3" stroke-width="2"/>
+<path d="M-10 820 H925" stroke="#C7B584" stroke-width="6"/>
+<g transform="translate(285 420)" class="chip-shape">
+<rect x="-12" y="-12" width="344" height="284" rx="6" fill="#718698"/>
+<rect width="320" height="260" rx="3" fill="#2F5D8C" stroke="#AAC5DA" stroke-width="2"/>
+<path d="M45.714285714285715 -20 v8 M45.714285714285715 272 v8" stroke="#C7B584" stroke-width="6"/><path d="M91.42857142857143 -20 v8 M91.42857142857143 272 v8" stroke="#C7B584" stroke-width="6"/><path d="M137.14285714285714 -20 v8 M137.14285714285714 272 v8" stroke="#C7B584" stroke-width="6"/><path d="M182.85714285714286 -20 v8 M182.85714285714286 272 v8" stroke="#C7B584" stroke-width="6"/><path d="M228.57142857142858 -20 v8 M228.57142857142858 272 v8" stroke="#C7B584" stroke-width="6"/><path d="M274.2857142857143 -20 v8 M274.2857142857143 272 v8" stroke="#C7B584" stroke-width="6"/>
+<text x="160.0" y="130.0" dy=".35em" text-anchor="middle" fill="#F7F6F3" font-family="Pretendard" font-size="40" font-weight="700">GPU</text>
+</g>
+<g transform="translate(30 390)" class="chip-shape">
+<rect x="-12" y="-12" width="174" height="154" rx="6" fill="#718698"/>
+<rect width="150" height="130" rx="3" fill="#4B657A" stroke="#AAC5DA" stroke-width="2"/>
+<path d="M21.428571428571427 -20 v8 M21.428571428571427 142 v8" stroke="#C7B584" stroke-width="6"/><path d="M42.857142857142854 -20 v8 M42.857142857142854 142 v8" stroke="#C7B584" stroke-width="6"/><path d="M64.28571428571429 -20 v8 M64.28571428571429 142 v8" stroke="#C7B584" stroke-width="6"/><path d="M85.71428571428571 -20 v8 M85.71428571428571 142 v8" stroke="#C7B584" stroke-width="6"/><path d="M107.14285714285714 -20 v8 M107.14285714285714 142 v8" stroke="#C7B584" stroke-width="6"/><path d="M128.57142857142858 -20 v8 M128.57142857142858 142 v8" stroke="#C7B584" stroke-width="6"/>
+<text x="75.0" y="65.0" dy=".35em" text-anchor="middle" fill="#F7F6F3" font-family="Pretendard" font-size="37.5" font-weight="700">HBM</text>
+</g><g transform="translate(720 390)" class="chip-shape">
+<rect x="-12" y="-12" width="174" height="154" rx="6" fill="#718698"/>
+<rect width="150" height="130" rx="3" fill="#4B657A" stroke="#AAC5DA" stroke-width="2"/>
+<path d="M21.428571428571427 -20 v8 M21.428571428571427 142 v8" stroke="#C7B584" stroke-width="6"/><path d="M42.857142857142854 -20 v8 M42.857142857142854 142 v8" stroke="#C7B584" stroke-width="6"/><path d="M64.28571428571429 -20 v8 M64.28571428571429 142 v8" stroke="#C7B584" stroke-width="6"/><path d="M85.71428571428571 -20 v8 M85.71428571428571 142 v8" stroke="#C7B584" stroke-width="6"/><path d="M107.14285714285714 -20 v8 M107.14285714285714 142 v8" stroke="#C7B584" stroke-width="6"/><path d="M128.57142857142858 -20 v8 M128.57142857142858 142 v8" stroke="#C7B584" stroke-width="6"/>
+<text x="75.0" y="65.0" dy=".35em" text-anchor="middle" fill="#F7F6F3" font-family="Pretendard" font-size="37.5" font-weight="700">HBM</text>
+</g><g transform="translate(30 605)" class="chip-shape">
+<rect x="-12" y="-12" width="174" height="154" rx="6" fill="#718698"/>
+<rect width="150" height="130" rx="3" fill="#4B657A" stroke="#AAC5DA" stroke-width="2"/>
+<path d="M21.428571428571427 -20 v8 M21.428571428571427 142 v8" stroke="#C7B584" stroke-width="6"/><path d="M42.857142857142854 -20 v8 M42.857142857142854 142 v8" stroke="#C7B584" stroke-width="6"/><path d="M64.28571428571429 -20 v8 M64.28571428571429 142 v8" stroke="#C7B584" stroke-width="6"/><path d="M85.71428571428571 -20 v8 M85.71428571428571 142 v8" stroke="#C7B584" stroke-width="6"/><path d="M107.14285714285714 -20 v8 M107.14285714285714 142 v8" stroke="#C7B584" stroke-width="6"/><path d="M128.57142857142858 -20 v8 M128.57142857142858 142 v8" stroke="#C7B584" stroke-width="6"/>
+<text x="75.0" y="65.0" dy=".35em" text-anchor="middle" fill="#F7F6F3" font-family="Pretendard" font-size="37.5" font-weight="700">HBM</text>
+</g><g transform="translate(720 605)" class="chip-shape">
+<rect x="-12" y="-12" width="174" height="154" rx="6" fill="#718698"/>
+<rect width="150" height="130" rx="3" fill="#4B657A" stroke="#AAC5DA" stroke-width="2"/>
+<path d="M21.428571428571427 -20 v8 M21.428571428571427 142 v8" stroke="#C7B584" stroke-width="6"/><path d="M42.857142857142854 -20 v8 M42.857142857142854 142 v8" stroke="#C7B584" stroke-width="6"/><path d="M64.28571428571429 -20 v8 M64.28571428571429 142 v8" stroke="#C7B584" stroke-width="6"/><path d="M85.71428571428571 -20 v8 M85.71428571428571 142 v8" stroke="#C7B584" stroke-width="6"/><path d="M107.14285714285714 -20 v8 M107.14285714285714 142 v8" stroke="#C7B584" stroke-width="6"/><path d="M128.57142857142858 -20 v8 M128.57142857142858 142 v8" stroke="#C7B584" stroke-width="6"/>
+<text x="75.0" y="65.0" dy=".35em" text-anchor="middle" fill="#F7F6F3" font-family="Pretendard" font-size="37.5" font-weight="700">HBM</text>
+</g>
+<path d="M630 388 V365 H695 V388" fill="none" stroke="#B9D8F2" stroke-width="3"/>
+<foreignObject x="625" y="255" width="290" height="100"><div xmlns="http://www.w3.org/1999/xhtml" class="art-label">짧은 간격</div></foreignObject>
+<foreignObject x="0" y="865" width="900" height="150"><div xmlns="http://www.w3.org/1999/xhtml" class="art-statement">많은 신호선을
+짧은 거리로 연결합니다.</div></foreignObject>
+<text x="0" y="1030" class="micro-label">GPU · COMPUTE     /     HBM · MEMORY</text>
 
-<h1>GPU 옆에 HBM을 배치하는 구조</h1>
-<div class="body-text"><p>GPU는 병렬 연산을 수행하고, HBM은 연산에 필요한 데이터를 저장하고 공급합니다.</p><p>두 부품을 인터포저 위에 가까이 배치하면 많은 신호선을 짧은 거리로 연결할 수 있습니다. 이를 통해 높은 메모리 대역폭을 확보합니다.</p><p>실리콘 인터포저를 사용하는 TSMC의 CoWoS-S가 대표적인 사례입니다.</p></div>
-</div>
+</svg>
+
 
   </main>
 
   <div class="footer">
-<div class="image-credit">Photo: C. Spille / PC Games Hardware · CC BY-SA 4.0 · AI-assisted cutout<br><a href="https://creativecommons.org/licenses/by-sa/4.0/">creativecommons.org/licenses/by-sa/4.0</a></div>
-<div class="note">CoWoS에는 여러 구조가 있으며, 여기서는 CoWoS-S를 설명합니다.</div>
-    <div class="source">출처: TSMC CoWoS 관련 공개 자료 (출처 상세 확인 필요)</div>
+
+<div class="note">GPU와 HBM의 배치를 설명한 개념도입니다. 실제 배치는 제품에 따라 다릅니다.</div>
+<div class="note">구조 이해를 위한 개념도 · 실제 크기와 비율은 다릅니다.</div>
+    <div class="source"></div>
   </div>
 </div>
 </body>

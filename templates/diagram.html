@@ -1,5 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
+{% if slide.visual %}
+<h1 class="structure-title">{{ slide.visual.title }}</h1>
+<div class="structure-art">{{ svg|safe }}</div>
+<div class="structure-roles">
+{% for name in ['칩','인터포저','패키지 기판'] %}<div><strong>{{ name }}</strong><span>{{ slide.visual.points[loop.index0] }}</span></div>{% endfor %}
+</div>
+{% else %}
 <h1>{{ slide.title }}</h1>
 <div class="diagram">{{ svg|safe }}</div>
 <p class="caption">{{ slide.body }}</p>
@@ -9,4 +16,5 @@
 .diagram svg { width: 100%; height: auto; display: block; }
 .caption { font-size: 32px; line-height: 1.65; white-space: pre-line; color: var(--ink); }
 </style>
+{% endif %}
 {% endblock %}

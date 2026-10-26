@@ -17,7 +17,8 @@
       415
     ],
     "technical_verification": "Original NVIDIA page identifies this as the H100 GPU SXM5 module. Full 892px version advertised in srcset.",
-    "display_derivative": "photos/h100-cutout.png"
+    "display_derivative": "photos/h100-cutout.png",
+    "used_in_current_render": true
   },
   {
     "slide": 5,
@@ -36,7 +37,8 @@
       639,
       519
     ],
-    "technical_verification": "Philtech identifies this as its TSV interposer cross-sectional SEM; image shows vertical electrodes, not lateral routing."
+    "technical_verification": "Philtech identifies this as its TSV interposer cross-sectional SEM; image shows vertical electrodes, not lateral routing.",
+    "used_in_current_render": false
   },
   {
     "slide": 8,
@@ -60,12 +62,13 @@
     ],
     "sha256": "fcc279125ee605b6a2c75ba15d26caa55774ef606afbbe5f935bb2e7b1a1d5d1",
     "rights_status": "No explicit public-reuse permission verified; draft use only pending rights review",
-    "changes": "Panel selected using SVG viewport; scale bar retained",
+    "changes": "Original image, with complete selected panel and scale bar preserved; composited into the visual storyboard.",
     "dimensions": [
       853,
       352
     ],
-    "technical_verification": "Source Figure 4 identifies left panel (a) as TSV/bonding metrology; right panel (b) shows defects and is excluded."
+    "technical_verification": "Source Figure 4 identifies left panel (a) as TSV/bonding metrology; right panel (b) shows defects and is excluded.",
+    "used_in_current_render": true
   },
   {
     "slide": 9,
@@ -85,7 +88,8 @@
       339,
       205
     ],
-    "technical_verification": "Source PBGA page includes this six-layer construction diagram. It is an illustration, not a microscopy cross-section."
+    "technical_verification": "Source PBGA page includes this six-layer construction diagram. It is an illustration, not a microscopy cross-section.",
+    "used_in_current_render": false
   },
   {
     "slide": 10,
@@ -114,7 +118,8 @@
       1000,
       426
     ],
-    "technical_verification": "Philtech identifies left panel as NiAu and right panel as SnAg; only right panel is displayed. This is not identified as a specific C4 implementation."
+    "technical_verification": "Philtech identifies left panel as NiAu and right panel as SnAg; only right panel is displayed. This is not identified as a specific C4 implementation.",
+    "used_in_current_render": false
   },
   {
     "slide": 11,
@@ -137,7 +142,8 @@
     ],
     "technical_verification": "Commons description identifies AMD Fiji GPU with HBM and interposer; used as a placement example, not as evidence of TSMC CoWoS-S.",
     "display_derivative": "photos/amd-fiji-cutout.png",
-    "derivative_license": "CC BY-SA 4.0"
+    "derivative_license": "CC BY-SA 4.0",
+    "used_in_current_render": false
   },
   {
     "slide": 12,
@@ -161,11 +167,12 @@
     ],
     "sha256": "46756bb52a1d6983261c1d137493a5f03929962121fa63a13990f2b0336b6e9e",
     "rights_status": "No explicit public-reuse permission verified; draft use only pending rights review",
-    "changes": "Panel selected using SVG viewport; scale bar retained",
+    "changes": "Original image, with complete selected panel and scale bar preserved; composited into the visual storyboard.",
     "dimensions": [
       1024,
       374
     ],
-    "technical_verification": "Source Figure 3 identifies a digital HBM cross-section extracted from Versa XRM 3D data. This is X-ray microscopy, not SEM."
+    "technical_verification": "Source Figure 3 identifies a digital HBM cross-section extracted from Versa XRM 3D data. This is X-ray microscopy, not SEM.",
+    "used_in_current_render": true
   }
 ]

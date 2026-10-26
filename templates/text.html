@@ -1,5 +1,121 @@
 {% extends "base.html" %}
+{% macro words(x,y,w,h,value,kind='copy') -%}
+<foreignObject x="{{ x }}" y="{{ y }}" width="{{ w }}" height="{{ 255 if kind == 'title' else (135 if kind == 'number' else h) }}"><div xmlns="http://www.w3.org/1999/xhtml" class="art-{{ kind }}">{{ value }}</div></foreignObject>
+{%- endmacro %}
+{% macro chip(x,y,w,h,label,fill='#2F5D8C') -%}
+<g transform="translate({{ x }} {{ y }})" class="chip-shape">
+<rect x="-12" y="-12" width="{{ w+24 }}" height="{{ h+24 }}" rx="6" fill="#718698"/>
+<rect width="{{ w }}" height="{{ h }}" rx="3" fill="{{ fill }}" stroke="#AAC5DA" stroke-width="2"/>
+{% for k in range(1,7) %}<path d="M{{ w*k/7 }} -20 v8 M{{ w*k/7 }} {{ h+12 }} v8" stroke="#C7B584" stroke-width="6"/>{% endfor %}
+<text x="{{ w/2 }}" y="{{ h/2 }}" dy=".35em" text-anchor="middle" fill="#F7F6F3" font-family="Pretendard" font-size="{{ [w/4,40]|min }}" font-weight="700">{{ label }}</text>
+</g>
+{%- endmacro %}
 {% block content %}
+{% if slide.visual %}
+{% set v = slide.visual %}
+<svg class="story-canvas" viewBox="0 0 920 1040" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="{{ v.title }}">
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10" fill="#91B6DA"/></marker>
+<pattern id="dot-grid" width="28" height="28" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#91B6DA" opacity=".2"/></pattern>
+</defs>
+{% if index == 2 %}
+<path d="M-80 780 Q400 400 1000 530" fill="none" stroke="#91B6DA" opacity=".08" stroke-width="150"/>
+{{ words(0,45,900,220,v.title,'title') }}
+{{ chip(25,390,235,235,'GPU') }}
+{% for k in range(3) %}<rect x="{{ 681+k*12 }}" y="{{ 390-k*16 }}" width="180" height="235" rx="5" fill="#28465D" stroke="#91B6DA" stroke-width="2"/>{% endfor %}
+<text x="800" y="510" text-anchor="middle" class="svg-label">HBM</text>
+<path d="M650 430 H320" class="route" marker-end="url(#arrow)"/><path d="M320 590 H650" class="route" marker-end="url(#arrow)"/>
+{{ words(315,325,340,100,v.points[0],'small') }}
+{{ words(315,620,345,105,v.points[1],'small') }}
+{{ words(0,820,850,170,v.points[2],'statement') }}
+{% elif index == 5 %}
+<text x="-12" y="580" class="outline-word" font-size="154">INTERPOSER</text>
+{% for k in range(16) %}<path d="M{{ 365+k*29 }} 280 V{{ 420+k*12 }} L{{ 100+k*29 }} {{ 670+k*12 }} V1050" fill="none" stroke="{{ '#91B6DA' if k%3 else '#C7B584' }}" opacity=".65" stroke-width="5"/><circle cx="{{365+k*29}}" cy="280" r="7" fill="#91B6DA"/>{% endfor %}
+<rect x="-30" y="-10" width="470" height="410" fill="#162C40"/>
+{{ words(0,45,700,240,v.title,'title') }}
+<rect x="-15" y="715" width="545" height="310" fill="#162C40"/>
+{{ words(0,730,500,135,v.points[0],'copy') }}
+{{ words(0,900,510,140,v.points[1],'copy') }}
+<path d="M560 355 L680 235" class="hairline"/><text x="690" y="230" class="micro-label">METAL ROUTING</text>
+{% elif index == 6 %}
+<rect x="460" y="-20" width="540" height="1080" fill="#E3EAF0"/>
+{{ words(0,40,900,220,v.title,'title') }}
+{% for k in range(4) %}<path d="M{{70+k*90}} 320 V650" stroke="#788B99" stroke-width="19"/>{% endfor %}
+{% for k in range(15) %}<path d="M{{520+k*24}} 320 V650" stroke="#2F5D8C" stroke-width="6"/>{% endfor %}
+<rect x="280" y="395" width="360" height="150" fill="#F7F6F3"/>
+<text x="460" y="518" class="big-type" text-anchor="middle" font-size="132">간격</text>
+{{ words(0,690,410,110,v.points[0],'copy') }}{{ words(510,690,410,110,v.points[1],'copy') }}
+<path d="M0 840 H920" stroke="#C4C8CA"/>
+{{ words(0,875,890,145,v.points[2],'statement-small') }}
+{% elif index == 7 %}
+{{ words(0,40,900,230,v.title,'title') }}
+<path d="M20 380 H810 Q885 380 885 455 Q885 530 810 530 H80 Q10 530 10 605 Q10 680 80 680 H890" fill="none" stroke="#60798E" stroke-width="11"/>
+{{ words(25,300,600,60,v.points[0],'small') }}
+<path d="M20 760 H880" fill="none" stroke="#BDD8F0" stroke-width="11" marker-end="url(#arrow)"/>
+{{ words(25,795,300,60,v.points[1],'small') }}
+<rect x="125" y="425" width="660" height="200" fill="#162C40"/>
+{{ words(150,446,610,190,v.points[2],'copy') }}
+{{ words(0,900,900,130,v.points[3],'copy') }}
+{% elif index == 8 %}
+<text x="-10" y="390" font-size="210" class="outline-word">TSV</text>
+{{ words(0,40,920,220,v.title,'title') }}
+<svg x="440" y="345" width="480" height="440" viewBox="0 0 474 352" preserveAspectRatio="xMidYMid meet"><defs><clipPath id="sem-panel"><rect width="474" height="352"/></clipPath></defs><image href="{{ assets_uri }}/photos/tsv-cross-sections.jpg" width="853" height="352" clip-path="url(#sem-panel)"/></svg>
+<path d="M404 370 V760" class="route" marker-end="url(#arrow)"/>
+{{ words(0,415,365,170,v.points[0],'copy') }}
+{{ words(0,625,365,240,v.points[1],'copy') }}
+{{ words(470,820,440,60,v.points[2],'small') }}
+{{ words(0,935,910,80,'THROUGH-SILICON VIA','technical') }}
+{% elif index == 9 %}
+{{ words(0,40,900,220,v.title,'title') }}
+{% for k in range(5) %}
+<path d="M35 {{360+k*90}} L410 {{280+k*90}} L555 {{325+k*90}} L180 {{410+k*90}} Z" fill="{{ '#2F5D8C' if k%2==0 else '#D4D6CC' }}" stroke="#F7F6F3" stroke-width="3"/>
+{% endfor %}
+<path d="M260 345 V725" stroke="#C7A95F" stroke-width="13" stroke-dasharray="52 15"/>
+<path d="M460 335 H585 M420 430 L560 515 H585" class="hairline"/>
+{{ words(605,285,315,55,'금속 배선','label') }}{{ words(605,340,315,150,v.points[0],'copy') }}
+{{ words(605,490,315,55,'절연층과 연결 통로','label') }}{{ words(605,550,315,150,v.points[1],'copy') }}
+{{ words(0,865,900,130,v.points[2],'statement-small') }}
+<text x="0" y="825" class="technical-svg">PACKAGE SUBSTRATE</text>
+{% elif index == 10 %}
+{{ words(0,40,920,210,v.title,'title') }}
+<path d="M90 410 L790 860" fill="none" stroke="#C7CED3" stroke-width="3" stroke-dasharray="7 12"/>
+{% for k in range(3) %}<circle cx="{{100+k*75}}" cy="340" r="9" fill="#2F5D8C"/>{% endfor %}
+<rect x="60" y="290" width="235" height="28" fill="#2F5D8C"/>
+{{ words(350,270,570,55,'01  ·  MICROBUMPS','technical') }}{{ words(350,330,560,100,v.points[0],'copy') }}
+{% for k in range(3) %}<circle cx="{{180+k*90}}" cy="565" r="20" fill="#667F93"/>{% endfor %}
+<path d="M130 525 H410 M130 605 H410" stroke="#2F5D8C" stroke-width="16"/>
+{{ words(470,510,450,55,'02  ·  C4 BUMPS','technical') }}{{ words(470,570,440,100,v.points[1],'copy') }}
+{% for k in range(4) %}<circle cx="{{180+k*125}}" cy="855" r="43" fill="#B3BCC1" stroke="#6D8292" stroke-width="2"/>{% endfor %}
+<path d="M95 790 H630" stroke="#2F5D8C" stroke-width="24"/>
+{{ words(655,755,265,110,'03
+SOLDER BALLS','technical') }}
+{{ words(150,945,740,65,v.points[2],'copy') }}
+{% elif index == 11 %}
+{{ words(0,35,900,230,v.title,'title') }}
+<rect x="-20" y="340" width="960" height="440" rx="12" fill="#1F3C52" stroke="#6689A3" stroke-width="2"/>
+<path d="M-10 820 H925" stroke="#C7B584" stroke-width="6"/>
+{{ chip(285,420,320,260,'GPU') }}
+{% for y in [390,605] %}{{ chip(30,y,150,130,'HBM','#4B657A') }}{{ chip(720,y,150,130,'HBM','#4B657A') }}{% endfor %}
+<path d="M630 388 V365 H695 V388" fill="none" stroke="#B9D8F2" stroke-width="3"/>
+{{ words(625,255,290,100,'짧은 간격','label') }}
+{{ words(0,865,900,150,v.points[0]+'
+'+v.points[1],'statement') }}
+<text x="0" y="1030" class="micro-label">GPU · COMPUTE     /     HBM · MEMORY</text>
+{% elif index == 12 %}
+<text x="-8" y="465" font-size="270" class="outline-word">3D</text>
+{{ words(0,35,900,220,v.title,'title') }}
+<rect x="45" y="306" width="220" height="116" fill="#294A65" stroke="#91B6DA"/><rect x="285" y="340" width="80" height="82" fill="#6D8498" stroke="#91B6DA"/>
+<text x="155" y="376" class="svg-label" text-anchor="middle">GPU</text><text x="325" y="390" class="micro-label" text-anchor="middle">HBM</text>
+<path d="M365 340 L470 349 M365 422 L470 660" stroke="#91B6DA" stroke-width="2" stroke-dasharray="8 7"/>
+<svg x="470" y="290" width="450" height="430" viewBox="0 0 541 374" preserveAspectRatio="xMidYMid meet"><defs><clipPath id="hbm-panel"><rect width="541" height="374"/></clipPath></defs><image href="{{ assets_uri }}/photos/hbm-xrm.jpg" width="1024" height="374" clip-path="url(#hbm-panel)"/></svg>
+{{ words(0,520,410,170,v.points[0],'copy') }}
+<path d="M0 755 H920" stroke="#91B6DA" stroke-width="2"/>
+{{ words(0,800,620,170,v.points[1],'statement-small') }}
+<text x="665" y="935" class="big-type" fill="#91B6DA" font-size="108">2.5D</text>
+<text x="470" y="715" class="micro-label">HBM · X-RAY VIRTUAL CROSS-SECTION</text>
+{% endif %}
+</svg>
+{% else %}
 <div class="composition">
 {% if slide.image %}
 <figure class="photo">
@@ -19,4 +135,5 @@
 <h1>{{ slide.title }}</h1>
 <div class="body-text">{% for paragraph in slide.body.split("\n\n") %}<p>{{ paragraph }}</p>{% endfor %}</div>
 </div>
+{% endif %}
 {% endblock %}

@@ -123,9 +123,46 @@ h1 { font-size: 78px; letter-spacing: -.045em; line-height: 1.16; margin-bottom:
   mask-image: linear-gradient(to top, #000 0 12%, transparent 12%), linear-gradient(to right, transparent, #000 4% 96%, transparent);
 }
 .layout-cover .photo figcaption { position: absolute; top: 540px; left: 80px; padding: 0; }
+/* Diagram-led story system; the approved cover is unchanged. */
+.visual-slide { background: #F7F6F3; color: #1A1A1A; }
+.visual-slide .body { display: block; position: relative; padding: 0; min-height: 0; }
+.visual-slide .header { position: relative; z-index: 5; }
+.visual-slide .footer { position: relative; z-index: 5; min-height: 50px; padding-top: 12px; font-size: 16px; }
+.visual-slide .footer .source:empty { display: none; }
+.visual-slide .story-canvas { display: block; width: 920px; height: 1040px; overflow: visible; }
+.visual-slide.tone-dark { color: #F7F6F3; background: #162C40; }
+.visual-slide.tone-dark .header, .visual-slide.tone-dark .footer { border-color: #526372; color: #ADB9C3; }
+.visual-slide.tone-dark .header .series { color: #F7F6F3; }
+.visual-slide.tone-dark .header .series::before { background: #91B6DA; }
+.art-title { font-size: 104px; font-weight: 700; line-height: 1.08; letter-spacing: -.05em; white-space: pre-line; }
+.art-copy { font-size: 34px; line-height: 1.48; white-space: pre-line; word-break: keep-all; }
+.art-small { font-size: 28px; line-height: 1.5; white-space: pre-line; }
+.art-label { font-size: 30px; line-height: 1.4; font-weight: 700; white-space: pre-line; }
+.art-statement { font-size: 54px; line-height: 1.24; font-weight: 700; letter-spacing: -.035em; white-space: pre-line; }
+.art-statement-small { font-size: 44px; line-height: 1.35; font-weight: 700; letter-spacing: -.03em; white-space: pre-line; }
+.art-number { font-size: 98px; font-weight: 700; letter-spacing: -.06em; color: #2F5D8C; }
+.art-technical { font-size: 26px; line-height: 1.45; font-weight: 700; letter-spacing: .08em; white-space: pre-line; color: #2F5D8C; }
+.tone-dark .art-technical, .tone-dark .art-small, .tone-dark .art-label { color: #B7D1EA; }
+.art-cta { padding: 17px 22px; border: 1.5px solid #91B6DA; color: #DCE9F4; font-size: 24px; line-height: 1.4; }
+.svg-label { fill: #F7F6F3; font: 700 34px Pretendard; }
+.micro-label { fill: #91B6DA; font: 20px Pretendard; letter-spacing: .04em; }
+.technical-svg { fill: #2F5D8C; font: 700 24px Pretendard; letter-spacing: .08em; }
+.big-type { fill: #2F5D8C; font-family: Pretendard; font-weight: 700; letter-spacing: -.06em; }
+.tone-dark .big-type { fill: #91B6DA; }
+.outline-word { fill: none; stroke: #7399B8; stroke-width: 1; opacity: .28; font-family: Pretendard; font-weight: 700; letter-spacing: -.04em; }
+.route { fill: none; stroke: #91B6DA; stroke-width: 5; }
+.hairline { fill: none; stroke: #7194B0; stroke-width: 2; }
+.structure-title { position: absolute; top: 40px; left: 0; font-size: 104px !important; line-height: 1.08; letter-spacing: -.05em; white-space: pre-line; margin: 0 !important; }
+.structure-art { position: absolute; top: 320px; left: -20px; width: 960px; height: 380px; overflow: hidden; }
+.structure-art svg { display: block; width: 960px; height: auto; transform: translateY(-180px); }
+.structure-roles { position: absolute; top: 760px; left: 0; width: 920px; }
+.structure-roles > div { display: flex; align-items: baseline; gap: 36px; padding: 17px 0; border-top: 1px solid #CBD2D7; }
+.structure-roles strong { width: 270px; font-size: 38px; color: #2F5D8C; }
+.structure-roles span { font-size: 30px; }
+.slide-10.visual-slide .art-title { font-size: 96px; }
 </style>
 </head>
-<body class="layout-text slide-7">
+<body class="layout-text slide-7 visual-slide tone-dark">
 <div class="slide">
   <div class="header">
     <span class="series">PACKAGING NOTE 02</span>
@@ -134,17 +171,34 @@ h1 { font-size: 78px; letter-spacing: -.045em; line-height: 1.16; margin-bottom:
 
   <main class="body">
 
-<div class="composition">
 
-<h1>연결 수를 늘리고 전송 거리를 줄인다</h1>
-<div class="body-text"><p>미세 배선을 사용하면 제한된 공간에 더 많은 신호 경로를 배치할 수 있습니다.</p><p>여러 경로로 데이터를 동시에 전달하면, 단위 시간에 주고받을 수 있는 데이터양인 대역폭을 높일 수 있습니다.</p><p>칩 사이의 거리가 짧아지는 것도 이점입니다. 배선의 전기적 부하가 줄어들어 데이터 전송에 필요한 에너지를 낮추는 데 도움이 됩니다.</p></div>
-</div>
+
+<svg class="story-canvas" viewBox="0 0 920 1040" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="짧은 연결,
+낮은 전송 부담">
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10" fill="#91B6DA"/></marker>
+<pattern id="dot-grid" width="28" height="28" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#91B6DA" opacity=".2"/></pattern>
+</defs>
+
+<foreignObject x="0" y="40" width="900" height="255"><div xmlns="http://www.w3.org/1999/xhtml" class="art-title">짧은 연결,
+낮은 전송 부담</div></foreignObject>
+<path d="M20 380 H810 Q885 380 885 455 Q885 530 810 530 H80 Q10 530 10 605 Q10 680 80 680 H890" fill="none" stroke="#60798E" stroke-width="11"/>
+<foreignObject x="25" y="300" width="600" height="60"><div xmlns="http://www.w3.org/1999/xhtml" class="art-small">긴 배선</div></foreignObject>
+<path d="M20 760 H880" fill="none" stroke="#BDD8F0" stroke-width="11" marker-end="url(#arrow)"/>
+<foreignObject x="25" y="795" width="300" height="60"><div xmlns="http://www.w3.org/1999/xhtml" class="art-small">짧은 배선</div></foreignObject>
+<rect x="125" y="425" width="660" height="200" fill="#162C40"/>
+<foreignObject x="150" y="446" width="610" height="190"><div xmlns="http://www.w3.org/1999/xhtml" class="art-copy">연결 거리가 짧아지면 전기적 부하를 줄이고, 전송 에너지를 낮추는 데 도움이 됩니다.</div></foreignObject>
+<foreignObject x="0" y="900" width="900" height="130"><div xmlns="http://www.w3.org/1999/xhtml" class="art-copy">미세 배선으로 신호 경로를 늘리면, 대역폭을 높일 수 있습니다.</div></foreignObject>
+
+</svg>
+
 
   </main>
 
   <div class="footer">
 
 <div class="note">실제 대역폭과 소비전력은 인터페이스와 시스템 설계에 따라 달라집니다.</div>
+<div class="note">구조 이해를 위한 개념도 · 실제 크기와 비율은 다릅니다.</div>
     <div class="source"></div>
   </div>
 </div>

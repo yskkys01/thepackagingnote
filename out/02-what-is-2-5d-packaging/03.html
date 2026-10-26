@@ -123,9 +123,46 @@ h1 { font-size: 78px; letter-spacing: -.045em; line-height: 1.16; margin-bottom:
   mask-image: linear-gradient(to top, #000 0 12%, transparent 12%), linear-gradient(to right, transparent, #000 4% 96%, transparent);
 }
 .layout-cover .photo figcaption { position: absolute; top: 540px; left: 80px; padding: 0; }
+/* Diagram-led story system; the approved cover is unchanged. */
+.visual-slide { background: #F7F6F3; color: #1A1A1A; }
+.visual-slide .body { display: block; position: relative; padding: 0; min-height: 0; }
+.visual-slide .header { position: relative; z-index: 5; }
+.visual-slide .footer { position: relative; z-index: 5; min-height: 50px; padding-top: 12px; font-size: 16px; }
+.visual-slide .footer .source:empty { display: none; }
+.visual-slide .story-canvas { display: block; width: 920px; height: 1040px; overflow: visible; }
+.visual-slide.tone-dark { color: #F7F6F3; background: #162C40; }
+.visual-slide.tone-dark .header, .visual-slide.tone-dark .footer { border-color: #526372; color: #ADB9C3; }
+.visual-slide.tone-dark .header .series { color: #F7F6F3; }
+.visual-slide.tone-dark .header .series::before { background: #91B6DA; }
+.art-title { font-size: 104px; font-weight: 700; line-height: 1.08; letter-spacing: -.05em; white-space: pre-line; }
+.art-copy { font-size: 34px; line-height: 1.48; white-space: pre-line; word-break: keep-all; }
+.art-small { font-size: 28px; line-height: 1.5; white-space: pre-line; }
+.art-label { font-size: 30px; line-height: 1.4; font-weight: 700; white-space: pre-line; }
+.art-statement { font-size: 54px; line-height: 1.24; font-weight: 700; letter-spacing: -.035em; white-space: pre-line; }
+.art-statement-small { font-size: 44px; line-height: 1.35; font-weight: 700; letter-spacing: -.03em; white-space: pre-line; }
+.art-number { font-size: 98px; font-weight: 700; letter-spacing: -.06em; color: #2F5D8C; }
+.art-technical { font-size: 26px; line-height: 1.45; font-weight: 700; letter-spacing: .08em; white-space: pre-line; color: #2F5D8C; }
+.tone-dark .art-technical, .tone-dark .art-small, .tone-dark .art-label { color: #B7D1EA; }
+.art-cta { padding: 17px 22px; border: 1.5px solid #91B6DA; color: #DCE9F4; font-size: 24px; line-height: 1.4; }
+.svg-label { fill: #F7F6F3; font: 700 34px Pretendard; }
+.micro-label { fill: #91B6DA; font: 20px Pretendard; letter-spacing: .04em; }
+.technical-svg { fill: #2F5D8C; font: 700 24px Pretendard; letter-spacing: .08em; }
+.big-type { fill: #2F5D8C; font-family: Pretendard; font-weight: 700; letter-spacing: -.06em; }
+.tone-dark .big-type { fill: #91B6DA; }
+.outline-word { fill: none; stroke: #7399B8; stroke-width: 1; opacity: .28; font-family: Pretendard; font-weight: 700; letter-spacing: -.04em; }
+.route { fill: none; stroke: #91B6DA; stroke-width: 5; }
+.hairline { fill: none; stroke: #7194B0; stroke-width: 2; }
+.structure-title { position: absolute; top: 40px; left: 0; font-size: 104px !important; line-height: 1.08; letter-spacing: -.05em; white-space: pre-line; margin: 0 !important; }
+.structure-art { position: absolute; top: 320px; left: -20px; width: 960px; height: 380px; overflow: hidden; }
+.structure-art svg { display: block; width: 960px; height: auto; transform: translateY(-180px); }
+.structure-roles { position: absolute; top: 760px; left: 0; width: 920px; }
+.structure-roles > div { display: flex; align-items: baseline; gap: 36px; padding: 17px 0; border-top: 1px solid #CBD2D7; }
+.structure-roles strong { width: 270px; font-size: 38px; color: #2F5D8C; }
+.structure-roles span { font-size: 30px; }
+.slide-10.visual-slide .art-title { font-size: 96px; }
 </style>
 </head>
-<body class="layout-diagram slide-3">
+<body class="layout-diagram slide-3 visual-slide tone-light">
 <div class="slide">
   <div class="header">
     <span class="series">PACKAGING NOTE 02</span>
@@ -134,8 +171,10 @@ h1 { font-size: 78px; letter-spacing: -.045em; line-height: 1.16; margin-bottom:
 
   <main class="body">
 
-<h1>인터포저 위에 칩을 나란히 배치한다</h1>
-<div class="diagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 620" font-family="Pretendard, Inter, sans-serif">
+
+<h1 class="structure-title">위에서 아래로,
+하나의 연결 구조</h1>
+<div class="structure-art"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 620" font-family="Pretendard, Inter, sans-serif">
   <defs>
     <style>
       .label { font-size: 24px; fill: #1A1A1A; }
@@ -195,21 +234,17 @@ h1 { font-size: 78px; letter-spacing: -.045em; line-height: 1.16; margin-bottom:
     <text class="label" x="790" y="552">솔더 볼 (PCB 연결)</text>
   </g>
 </svg></div>
-<p class="caption">GPU와 HBM을 하나의 인터포저 위에 놓고, 패키지 기판이 메인보드와 이어 줍니다.
+<div class="structure-roles">
+<div><strong>칩</strong><span>연산과 메모리</span></div><div><strong>인터포저</strong><span>촘촘한 칩 간 연결</span></div><div><strong>패키지 기판</strong><span>외부 연결과 구조 지지</span></div>
+</div>
 
-칩 → 인터포저 → 패키지 기판 → 메인보드</p>
-
-<style>
-.diagram { width: 100%; margin: 8px 0 48px; }
-.diagram svg { width: 100%; height: auto; display: block; }
-.caption { font-size: 32px; line-height: 1.65; white-space: pre-line; color: var(--ink); }
-</style>
 
   </main>
 
   <div class="footer">
 
 <div class="note">실리콘 인터포저를 사용하는 대표적인 구조를 기준으로 설명합니다.</div>
+
     <div class="source"></div>
   </div>
 </div>

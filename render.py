@@ -57,6 +57,13 @@ def render_post(json_path: pathlib.Path, page, env):
             if (text && !fits()) text.classList.add('compact');
             if (text && !fits()) text.classList.add('compact-small');
             if (!fits()) throw new Error('Slide content overflows: ' + body.scrollHeight + ' > ' + body.clientHeight);
+            for (const box of document.querySelectorAll('foreignObject')) {
+                const content = box.firstElementChild;
+                const bounds = box.getBoundingClientRect();
+                if (content && (content.scrollHeight > bounds.height + 1 || content.scrollWidth > bounds.width + 1)) {
+                    throw new Error('Diagram text is clipped: ' + content.textContent.trim());
+                }
+            }
         }""")
         page.screenshot(path=str(out / f"{i:02d}.png"),
                         clip={"x": 0, "y": 0, "width": W, "height": H})

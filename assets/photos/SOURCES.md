@@ -105,3 +105,9 @@ Full provenance, hashes, dimensions, crop coordinates, and review status are rec
 ## Cutout revision
 
 The NVIDIA and AMD package images now use transparent PNG derivatives made with AI-assisted background removal. These are editorial visual derivatives, not pixel-exact technical evidence; retain the original JPEGs for reference. The AMD derivative remains CC BY-SA 4.0, with C. Spille / PC Games Hardware attribution. Changes: background removal and display rotation. Microscopy originals are unchanged; only the display edges are softly masked, with the bottom scale-bar strip kept opaque. They are not fully isolated specimen cutouts.
+
+## Visual-storyboard revision
+
+The current carousel uses the approved NVIDIA cover cutout on slide 1 and original microscopy panels on slides 8 and 12. Other supplied photos and cutouts remain archived but are not shown. Slides 2, 4–7, 9–11, and 13 use original conceptual vector drawings, explicitly identified as not to scale. Slide 3 embeds the original SVG without altering its contents. Reuse rights for the three displayed third-party images remain as recorded above.
+
+Short Korean display copy is stored under each slide’s `visual` field. The original full Korean titles, bodies, notes, and sources remain in their original JSON fields for reference.

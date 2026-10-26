@@ -123,9 +123,46 @@ h1 { font-size: 78px; letter-spacing: -.045em; line-height: 1.16; margin-bottom:
   mask-image: linear-gradient(to top, #000 0 12%, transparent 12%), linear-gradient(to right, transparent, #000 4% 96%, transparent);
 }
 .layout-cover .photo figcaption { position: absolute; top: 540px; left: 80px; padding: 0; }
+/* Diagram-led story system; the approved cover is unchanged. */
+.visual-slide { background: #F7F6F3; color: #1A1A1A; }
+.visual-slide .body { display: block; position: relative; padding: 0; min-height: 0; }
+.visual-slide .header { position: relative; z-index: 5; }
+.visual-slide .footer { position: relative; z-index: 5; min-height: 50px; padding-top: 12px; font-size: 16px; }
+.visual-slide .footer .source:empty { display: none; }
+.visual-slide .story-canvas { display: block; width: 920px; height: 1040px; overflow: visible; }
+.visual-slide.tone-dark { color: #F7F6F3; background: #162C40; }
+.visual-slide.tone-dark .header, .visual-slide.tone-dark .footer { border-color: #526372; color: #ADB9C3; }
+.visual-slide.tone-dark .header .series { color: #F7F6F3; }
+.visual-slide.tone-dark .header .series::before { background: #91B6DA; }
+.art-title { font-size: 104px; font-weight: 700; line-height: 1.08; letter-spacing: -.05em; white-space: pre-line; }
+.art-copy { font-size: 34px; line-height: 1.48; white-space: pre-line; word-break: keep-all; }
+.art-small { font-size: 28px; line-height: 1.5; white-space: pre-line; }
+.art-label { font-size: 30px; line-height: 1.4; font-weight: 700; white-space: pre-line; }
+.art-statement { font-size: 54px; line-height: 1.24; font-weight: 700; letter-spacing: -.035em; white-space: pre-line; }
+.art-statement-small { font-size: 44px; line-height: 1.35; font-weight: 700; letter-spacing: -.03em; white-space: pre-line; }
+.art-number { font-size: 98px; font-weight: 700; letter-spacing: -.06em; color: #2F5D8C; }
+.art-technical { font-size: 26px; line-height: 1.45; font-weight: 700; letter-spacing: .08em; white-space: pre-line; color: #2F5D8C; }
+.tone-dark .art-technical, .tone-dark .art-small, .tone-dark .art-label { color: #B7D1EA; }
+.art-cta { padding: 17px 22px; border: 1.5px solid #91B6DA; color: #DCE9F4; font-size: 24px; line-height: 1.4; }
+.svg-label { fill: #F7F6F3; font: 700 34px Pretendard; }
+.micro-label { fill: #91B6DA; font: 20px Pretendard; letter-spacing: .04em; }
+.technical-svg { fill: #2F5D8C; font: 700 24px Pretendard; letter-spacing: .08em; }
+.big-type { fill: #2F5D8C; font-family: Pretendard; font-weight: 700; letter-spacing: -.06em; }
+.tone-dark .big-type { fill: #91B6DA; }
+.outline-word { fill: none; stroke: #7399B8; stroke-width: 1; opacity: .28; font-family: Pretendard; font-weight: 700; letter-spacing: -.04em; }
+.route { fill: none; stroke: #91B6DA; stroke-width: 5; }
+.hairline { fill: none; stroke: #7194B0; stroke-width: 2; }
+.structure-title { position: absolute; top: 40px; left: 0; font-size: 104px !important; line-height: 1.08; letter-spacing: -.05em; white-space: pre-line; margin: 0 !important; }
+.structure-art { position: absolute; top: 320px; left: -20px; width: 960px; height: 380px; overflow: hidden; }
+.structure-art svg { display: block; width: 960px; height: auto; transform: translateY(-180px); }
+.structure-roles { position: absolute; top: 760px; left: 0; width: 920px; }
+.structure-roles > div { display: flex; align-items: baseline; gap: 36px; padding: 17px 0; border-top: 1px solid #CBD2D7; }
+.structure-roles strong { width: 270px; font-size: 38px; color: #2F5D8C; }
+.structure-roles span { font-size: 30px; }
+.slide-10.visual-slide .art-title { font-size: 96px; }
 </style>
 </head>
-<body class="layout-closing slide-13">
+<body class="layout-closing slide-13 visual-slide tone-dark">
 <div class="slide">
   <div class="header">
     <span class="series">PACKAGING NOTE 02</span>
@@ -134,30 +171,49 @@ h1 { font-size: 78px; letter-spacing: -.045em; line-height: 1.16; margin-bottom:
 
   <main class="body">
 
-<h1>다음 편: 이종집적</h1>
-<p class="body-text">지금까지는 칩을 어떻게 배치하고 연결하는지 살펴봤습니다.
 
-다음 편에서는 기능이나 제조 공정이 다른 칩들을 하나의 시스템으로 통합하는 이종집적(Heterogeneous Integration)을 다룹니다.
 
-각 기능을 하나의 칩에 넣는 대신 여러 칩으로 나누면 어떤 장점이 있을까요?</p>
-<div class="cta">Packaging Note를 팔로우해 주세요</div>
-
-<style>
-.cta {
-  align-self: flex-start;
-  margin-top: 64px;
-  padding: 28px 48px;
-  border: 2.5px solid var(--accent);
-  color: var(--accent);
-  font-size: 34px; font-weight: 700;
-}
-</style>
+<svg class="story-canvas" viewBox="0 0 920 1040" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="다음 편:
+이종집적">
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10" fill="#91B6DA"/></marker>
+<pattern id="dot-grid" width="28" height="28" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#91B6DA" opacity=".2"/></pattern>
+</defs>
+<text x="-15" y="390" class="outline-word" font-size="176">CHIPLETS</text>
+<foreignObject x="0" y="40" width="920" height="255"><div xmlns="http://www.w3.org/1999/xhtml" class="art-title">다음 편:
+이종집적</div></foreignObject>
+<g transform="translate(60 445) rotate(-12 390 120)">
+<path d="M-30 -20 H825 V310 H-30 Z" fill="#29465B" stroke="#59768A" stroke-width="2"/>
+<g transform="translate(5 30)" class="chip-shape">
+<rect x="-12" y="-12" width="224" height="204" rx="6" fill="#718698"/>
+<rect width="200" height="180" rx="3" fill="#2F5D8C" stroke="#AAC5DA" stroke-width="2"/>
+<path d="M28.571428571428573 -20 v8 M28.571428571428573 192 v8" stroke="#C7B584" stroke-width="6"/><path d="M57.142857142857146 -20 v8 M57.142857142857146 192 v8" stroke="#C7B584" stroke-width="6"/><path d="M85.71428571428571 -20 v8 M85.71428571428571 192 v8" stroke="#C7B584" stroke-width="6"/><path d="M114.28571428571429 -20 v8 M114.28571428571429 192 v8" stroke="#C7B584" stroke-width="6"/><path d="M142.85714285714286 -20 v8 M142.85714285714286 192 v8" stroke="#C7B584" stroke-width="6"/><path d="M171.42857142857142 -20 v8 M171.42857142857142 192 v8" stroke="#C7B584" stroke-width="6"/>
+<text x="100.0" y="90.0" dy=".35em" text-anchor="middle" fill="#F7F6F3" font-family="Pretendard" font-size="40" font-weight="700">CPU</text>
+</g><g transform="translate(280 90)" class="chip-shape">
+<rect x="-12" y="-12" width="264" height="204" rx="6" fill="#718698"/>
+<rect width="240" height="180" rx="3" fill="#2F5D8C" stroke="#AAC5DA" stroke-width="2"/>
+<path d="M34.285714285714285 -20 v8 M34.285714285714285 192 v8" stroke="#C7B584" stroke-width="6"/><path d="M68.57142857142857 -20 v8 M68.57142857142857 192 v8" stroke="#C7B584" stroke-width="6"/><path d="M102.85714285714286 -20 v8 M102.85714285714286 192 v8" stroke="#C7B584" stroke-width="6"/><path d="M137.14285714285714 -20 v8 M137.14285714285714 192 v8" stroke="#C7B584" stroke-width="6"/><path d="M171.42857142857142 -20 v8 M171.42857142857142 192 v8" stroke="#C7B584" stroke-width="6"/><path d="M205.71428571428572 -20 v8 M205.71428571428572 192 v8" stroke="#C7B584" stroke-width="6"/>
+<text x="120.0" y="90.0" dy=".35em" text-anchor="middle" fill="#F7F6F3" font-family="Pretendard" font-size="40" font-weight="700">GPU</text>
+</g><g transform="translate(610 0)" class="chip-shape">
+<rect x="-12" y="-12" width="174" height="164" rx="6" fill="#718698"/>
+<rect width="150" height="140" rx="3" fill="#6E879B" stroke="#AAC5DA" stroke-width="2"/>
+<path d="M21.428571428571427 -20 v8 M21.428571428571427 152 v8" stroke="#C7B584" stroke-width="6"/><path d="M42.857142857142854 -20 v8 M42.857142857142854 152 v8" stroke="#C7B584" stroke-width="6"/><path d="M64.28571428571429 -20 v8 M64.28571428571429 152 v8" stroke="#C7B584" stroke-width="6"/><path d="M85.71428571428571 -20 v8 M85.71428571428571 152 v8" stroke="#C7B584" stroke-width="6"/><path d="M107.14285714285714 -20 v8 M107.14285714285714 152 v8" stroke="#C7B584" stroke-width="6"/><path d="M128.57142857142858 -20 v8 M128.57142857142858 152 v8" stroke="#C7B584" stroke-width="6"/>
+<text x="75.0" y="70.0" dy=".35em" text-anchor="middle" fill="#F7F6F3" font-family="Pretendard" font-size="37.5" font-weight="700">HBM</text>
+</g>
+<path d="M220 120 H260 M530 180 H585 V70 H595" stroke="#C7B584" stroke-width="4" fill="none"/>
+</g>
+<foreignObject x="0" y="810" width="900" height="105"><div xmlns="http://www.w3.org/1999/xhtml" class="art-copy">기능과 제조 공정이 다른 칩들을 하나의 시스템으로 통합합니다.</div></foreignObject>
+<foreignObject x="0" y="940" width="530" height="100"><div xmlns="http://www.w3.org/1999/xhtml" class="art-copy">여러 칩으로 나누면
+어떤 장점이 있을까요?</div></foreignObject>
+<foreignObject x="555" y="925" width="365" height="110"><div xmlns="http://www.w3.org/1999/xhtml" class="art-cta">Packaging Note를 팔로우해 주세요</div></foreignObject>
+</svg>
 
   </main>
 
   <div class="footer">
 
 
+<div class="note">구조 이해를 위한 개념도 · 실제 크기와 비율은 다릅니다.</div>
     <div class="source"></div>
   </div>
 </div>
