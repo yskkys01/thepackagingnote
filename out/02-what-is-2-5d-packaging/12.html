@@ -96,6 +96,33 @@ h1 { font-size: 78px; letter-spacing: -.045em; line-height: 1.16; margin-bottom:
 .layout-comparison .cell { padding: 30px 20px; }
 .layout-comparison .cell.head { background: var(--accent); color: white; border: 0; }
 .layout-comparison .cell.item { color: var(--accent); }
+/* Image and type share the same reading field. */
+.layout-text .composition { display: flow-root; }
+.layout-text .body-text { white-space: normal; }
+.layout-text .body-text p { margin: 0 0 30px; }
+.layout-text .photo { display: block; float: right; width: 420px; margin: 80px -10px 24px 32px; shape-outside: inset(55px 0 0 0 round 36px); }
+.layout-text .photo-frame { height: 340px !important; background: transparent; }
+.layout-text .photo figcaption { font-size: 15px; line-height: 1.4; border: 0; padding: 8px 10px; max-width: none; color: var(--muted); }
+.layout-text .has-photo h1 { font-size: 65px; line-height: 1.12; margin-bottom: 38px; }
+.layout-text .has-photo .body-text { line-height: 1.5; }
+.layout-text .photo-media { mix-blend-mode: multiply; }
+.slide-5 .photo img, .slide-9 .photo img { mix-blend-mode: multiply; }
+.slide-11 .photo { width: 500px; margin-top: 90px; margin-right: -55px; shape-outside: polygon(30% 0,100% 0,100% 100%,0 100%,0 40%); }
+.slide-11 .photo-frame { height: 410px !important; transform: rotate(-8deg); }
+.slide-10 .photo { width: 350px; margin-top: 70px; }
+.slide-10 .photo-frame { height: 300px !important; }
+.layout-cover .body { position: relative; display: block; padding-top: 100px; }
+.layout-cover .has-photo .cover-title { position: relative; z-index: 3; font-size: 164px; line-height: .98; max-width: 720px; letter-spacing: -.06em; }
+.layout-cover .rule { display: none; }
+.layout-cover .has-photo .subtitle { position: absolute; bottom: 45px; left: 0; width: 720px; font-size: 38px; margin: 0; }
+.layout-cover .photo { position: absolute; top: 350px; left: -45px; width: 1010px; transform: rotate(-12deg); z-index: 2; }
+.layout-cover .photo-frame { background: transparent; height: 510px !important; padding: 0; }
+.layout-cover .photo figcaption { transform: rotate(12deg); padding-left: 120px; }
+.layout-cover .photo img { filter: drop-shadow(0 30px 30px #0005); }
+.slide-5 .photo img, .slide-8 .photo-media, .slide-10 .photo-media, .slide-12 .photo-media {
+  mask-image: linear-gradient(to top, #000 0 12%, transparent 12%), linear-gradient(to right, transparent, #000 4% 96%, transparent);
+}
+.layout-cover .photo figcaption { position: absolute; top: 540px; left: 80px; padding: 0; }
 </style>
 </head>
 <body class="layout-text slide-12">
@@ -107,7 +134,7 @@ h1 { font-size: 78px; letter-spacing: -.045em; line-height: 1.16; margin-bottom:
 
   <main class="body has-photo">
 
-<h1>HBM은 3D인데, 전체는 왜 2.5D일까?</h1>
+<div class="composition">
 
 <figure class="photo">
   <div class="photo-frame" style="height: 280px;">
@@ -121,11 +148,9 @@ h1 { font-size: 78px; letter-spacing: -.045em; line-height: 1.16; margin-bottom:
 <figcaption>HBM stack · X-ray virtual cross-section (XRM)</figcaption>
 </figure>
 
-<p class="body-text">HBM 내부에서는 여러 DRAM 다이가 수직으로 쌓여 연결됩니다. 이 부분은 3D 적층에 해당합니다.
-
-반면 GPU와 HBM은 인터포저 위에 나란히 배치됩니다. 이들 사이의 연결은 2.5D 구조입니다.
-
-따라서 하나의 패키지 안에 3D로 적층된 메모리와 2.5D 칩 간 연결이 함께 사용될 수 있습니다.</p>
+<h1>HBM은 3D인데, 전체는 왜 2.5D일까?</h1>
+<div class="body-text"><p>HBM 내부에서는 여러 DRAM 다이가 수직으로 쌓여 연결됩니다. 이 부분은 3D 적층에 해당합니다.</p><p>반면 GPU와 HBM은 인터포저 위에 나란히 배치됩니다. 이들 사이의 연결은 2.5D 구조입니다.</p><p>따라서 하나의 패키지 안에 3D로 적층된 메모리와 2.5D 칩 간 연결이 함께 사용될 수 있습니다.</p></div>
+</div>
 
   </main>
 

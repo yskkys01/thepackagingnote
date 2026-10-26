@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>{{ slide.title }}</h1>
+<div class="composition">
 {% if slide.image %}
 <figure class="photo">
   <div class="photo-frame" style="height: {{ slide.image.height|default(480) }}px;">
@@ -16,5 +16,7 @@
 {% if slide.image.caption %}<figcaption>{{ slide.image.caption }}</figcaption>{% endif %}
 </figure>
 {% endif %}
-<p class="body-text">{{ slide.body }}</p>
+<h1>{{ slide.title }}</h1>
+<div class="body-text">{% for paragraph in slide.body.split("\n\n") %}<p>{{ paragraph }}</p>{% endfor %}</div>
+</div>
 {% endblock %}

@@ -11,12 +11,13 @@
     "fit": "contain",
     "sha256": "5e75ac8e4b02d1c532dd8f6b738858a44d64ed8eefdf9825b13908dde27380fa",
     "rights_status": "No explicit public-reuse permission verified; draft use only pending rights review",
-    "changes": "Resized for display; no source content edited",
+    "changes": "AI-assisted background removal; rotated for editorial display. Original JPEG preserved.",
     "dimensions": [
       892,
       415
     ],
-    "technical_verification": "Original NVIDIA page identifies this as the H100 GPU SXM5 module. Full 892px version advertised in srcset."
+    "technical_verification": "Original NVIDIA page identifies this as the H100 GPU SXM5 module. Full 892px version advertised in srcset.",
+    "display_derivative": "photos/h100-cutout.png"
   },
   {
     "slide": 5,
@@ -129,12 +130,14 @@
     "fit": "contain",
     "sha256": "9394dd142e1971b8575d3a967ac69d89a1069e77bd89d9bfa4b81a7d5a0237c1",
     "rights_status": "CC BY-SA 4.0 verified on Wikimedia Commons file page",
-    "changes": "Displayed at reduced size, without cropping or annotations",
+    "changes": "AI-assisted background removal; rotated for editorial display. Original JPEG preserved.",
     "dimensions": [
       3872,
       2592
     ],
-    "technical_verification": "Commons description identifies AMD Fiji GPU with HBM and interposer; used as a placement example, not as evidence of TSMC CoWoS-S."
+    "technical_verification": "Commons description identifies AMD Fiji GPU with HBM and interposer; used as a placement example, not as evidence of TSMC CoWoS-S.",
+    "display_derivative": "photos/amd-fiji-cutout.png",
+    "derivative_license": "CC BY-SA 4.0"
   },
   {
     "slide": 12,

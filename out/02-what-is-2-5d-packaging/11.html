@@ -96,6 +96,33 @@ h1 { font-size: 78px; letter-spacing: -.045em; line-height: 1.16; margin-bottom:
 .layout-comparison .cell { padding: 30px 20px; }
 .layout-comparison .cell.head { background: var(--accent); color: white; border: 0; }
 .layout-comparison .cell.item { color: var(--accent); }
+/* Image and type share the same reading field. */
+.layout-text .composition { display: flow-root; }
+.layout-text .body-text { white-space: normal; }
+.layout-text .body-text p { margin: 0 0 30px; }
+.layout-text .photo { display: block; float: right; width: 420px; margin: 80px -10px 24px 32px; shape-outside: inset(55px 0 0 0 round 36px); }
+.layout-text .photo-frame { height: 340px !important; background: transparent; }
+.layout-text .photo figcaption { font-size: 15px; line-height: 1.4; border: 0; padding: 8px 10px; max-width: none; color: var(--muted); }
+.layout-text .has-photo h1 { font-size: 65px; line-height: 1.12; margin-bottom: 38px; }
+.layout-text .has-photo .body-text { line-height: 1.5; }
+.layout-text .photo-media { mix-blend-mode: multiply; }
+.slide-5 .photo img, .slide-9 .photo img { mix-blend-mode: multiply; }
+.slide-11 .photo { width: 500px; margin-top: 90px; margin-right: -55px; shape-outside: polygon(30% 0,100% 0,100% 100%,0 100%,0 40%); }
+.slide-11 .photo-frame { height: 410px !important; transform: rotate(-8deg); }
+.slide-10 .photo { width: 350px; margin-top: 70px; }
+.slide-10 .photo-frame { height: 300px !important; }
+.layout-cover .body { position: relative; display: block; padding-top: 100px; }
+.layout-cover .has-photo .cover-title { position: relative; z-index: 3; font-size: 164px; line-height: .98; max-width: 720px; letter-spacing: -.06em; }
+.layout-cover .rule { display: none; }
+.layout-cover .has-photo .subtitle { position: absolute; bottom: 45px; left: 0; width: 720px; font-size: 38px; margin: 0; }
+.layout-cover .photo { position: absolute; top: 350px; left: -45px; width: 1010px; transform: rotate(-12deg); z-index: 2; }
+.layout-cover .photo-frame { background: transparent; height: 510px !important; padding: 0; }
+.layout-cover .photo figcaption { transform: rotate(12deg); padding-left: 120px; }
+.layout-cover .photo img { filter: drop-shadow(0 30px 30px #0005); }
+.slide-5 .photo img, .slide-8 .photo-media, .slide-10 .photo-media, .slide-12 .photo-media {
+  mask-image: linear-gradient(to top, #000 0 12%, transparent 12%), linear-gradient(to right, transparent, #000 4% 96%, transparent);
+}
+.layout-cover .photo figcaption { position: absolute; top: 540px; left: 80px; padding: 0; }
 </style>
 </head>
 <body class="layout-text slide-11">
@@ -107,27 +134,25 @@ h1 { font-size: 78px; letter-spacing: -.045em; line-height: 1.16; margin-bottom:
 
   <main class="body has-photo">
 
-<h1>GPU 옆에 HBM을 배치하는 구조</h1>
+<div class="composition">
 
 <figure class="photo">
   <div class="photo-frame" style="height: 280px;">
 
-    <img src="../../assets/photos/amd-fiji.jpg" alt="AMD Fiji package with central GPU and four neighboring HBM stacks" style="object-fit: contain;">
+    <img src="../../assets/photos/amd-fiji-cutout.png" alt="AMD Fiji package with central GPU and four neighboring HBM stacks" style="object-fit: contain;">
 
   </div>
 <figcaption>AMD Fiji · GPU + HBM placement example; not CoWoS-S</figcaption>
 </figure>
 
-<p class="body-text">GPU는 병렬 연산을 수행하고, HBM은 연산에 필요한 데이터를 저장하고 공급합니다.
-
-두 부품을 인터포저 위에 가까이 배치하면 많은 신호선을 짧은 거리로 연결할 수 있습니다. 이를 통해 높은 메모리 대역폭을 확보합니다.
-
-실리콘 인터포저를 사용하는 TSMC의 CoWoS-S가 대표적인 사례입니다.</p>
+<h1>GPU 옆에 HBM을 배치하는 구조</h1>
+<div class="body-text"><p>GPU는 병렬 연산을 수행하고, HBM은 연산에 필요한 데이터를 저장하고 공급합니다.</p><p>두 부품을 인터포저 위에 가까이 배치하면 많은 신호선을 짧은 거리로 연결할 수 있습니다. 이를 통해 높은 메모리 대역폭을 확보합니다.</p><p>실리콘 인터포저를 사용하는 TSMC의 CoWoS-S가 대표적인 사례입니다.</p></div>
+</div>
 
   </main>
 
   <div class="footer">
-<div class="image-credit">Photo: C. Spille / PC Games Hardware · CC BY-SA 4.0<br><a href="https://creativecommons.org/licenses/by-sa/4.0/">creativecommons.org/licenses/by-sa/4.0</a></div>
+<div class="image-credit">Photo: C. Spille / PC Games Hardware · CC BY-SA 4.0 · AI-assisted cutout<br><a href="https://creativecommons.org/licenses/by-sa/4.0/">creativecommons.org/licenses/by-sa/4.0</a></div>
 <div class="note">CoWoS에는 여러 구조가 있으며, 여기서는 CoWoS-S를 설명합니다.</div>
     <div class="source">출처: TSMC CoWoS 관련 공개 자료 (출처 상세 확인 필요)</div>
   </div>

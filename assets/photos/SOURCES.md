@@ -1,10 +1,10 @@
 # Carousel image sources
 
-Original image bytes are retained. Crops are non-destructive SVG viewports in the templates; microscopy scale bars remain visible. Existing Korean post text and the slide 3 SVG are unchanged.
+Original image bytes are retained alongside the edited display derivatives. Crops are non-destructive SVG viewports in the templates; microscopy scale bars remain visible. Existing Korean post text and the slide 3 SVG are unchanged.
 
 ## Reuse status
 
-The AMD Fiji photo is verified as CC BY-SA 4.0 on its Wikimedia Commons file page. The photo is displayed complete, without arrows or other edits; it is resized for layout. Credit and the license URL are visible on slide 11. Preserve attribution and the license when sharing the photo; adaptations must follow its ShareAlike terms. This record does not apply a blanket license to the project or other images.
+The AMD Fiji photo is verified as CC BY-SA 4.0 on its Wikimedia Commons file page. The current display uses an AI-assisted background-removal derivative, with rotation; see the cutout revision below. Credit and the license URL are visible on slide 11. Preserve attribution and the license when sharing the photo; adaptations must follow its ShareAlike terms. This record does not apply a blanket license to the project or other images.
 
 No explicit permission for public Instagram reuse was verified for the other six images. Their availability on a manufacturer or publisher site is not an open license. These are visual drafts, not a claim of publication clearance. Confirm appropriate reuse rights or replace those assets before public posting.
 
@@ -101,3 +101,7 @@ Source Figure 3 identifies a digital HBM cross-section extracted from Versa XRM 
 - Slide 11: original Korean source-detail reminder is retained. The AMD photo does not illustrate the specific CoWoS-S implementation mentioned in the text.
 
 Full provenance, hashes, dimensions, crop coordinates, and review status are recorded in `sources.json`.
+
+## Cutout revision
+
+The NVIDIA and AMD package images now use transparent PNG derivatives made with AI-assisted background removal. These are editorial visual derivatives, not pixel-exact technical evidence; retain the original JPEGs for reference. The AMD derivative remains CC BY-SA 4.0, with C. Spille / PC Games Hardware attribution. Changes: background removal and display rotation. Microscopy originals are unchanged; only the display edges are softly masked, with the bottom scale-bar strip kept opaque. They are not fully isolated specimen cutouts.

@@ -16,10 +16,10 @@
       "layout": "cover",
       "index": 1,
       "image": {
-        "file": "photos/h100-sxm5.jpg",
+        "file": "photos/h100-cutout.png",
         "alt": "NVIDIA H100 SXM5 module with exposed GPU package",
         "caption": "NVIDIA H100 · SXM5 module",
-        "credit": "Image: NVIDIA",
+        "credit": "Image: NVIDIA · AI-assisted cutout",
         "height": 360,
         "fit": "contain"
       },
@@ -159,10 +159,10 @@
       "layout": "text",
       "index": 11,
       "image": {
-        "file": "photos/amd-fiji.jpg",
+        "file": "photos/amd-fiji-cutout.png",
         "alt": "AMD Fiji package with central GPU and four neighboring HBM stacks",
         "caption": "AMD Fiji · GPU + HBM placement example; not CoWoS-S",
-        "credit": "Photo: C. Spille / PC Games Hardware · CC BY-SA 4.0",
+        "credit": "Photo: C. Spille / PC Games Hardware · CC BY-SA 4.0 · AI-assisted cutout",
         "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
         "license_label": "creativecommons.org/licenses/by-sa/4.0",
         "height": 280,
